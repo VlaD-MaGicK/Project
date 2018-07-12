@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>World Auction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+</head>
+<body>
+    <header> 
+        <nav class="navbar">
+            <label class="toggle">☰</label>
+            <ul class=network-icons>
+                <li class="li-item1"><a class="a-network-icons"><img class="telegram-link" src="img/icon-menu-telegram.png" alt="telegram-logo"/></a></li>
+                <li class="li-item2"><a class="a-network-icons"><img class="facebook-link" src="img/icon-menu-facebook.png" alt="facebook-logo"/></a></li>
+                <li class="li-item3"><a class="a-network-icons"><img class="vkontakte-link" src="img/icon-menu-vkontakte.png" alt="vkontakte-logo"/></a></li>
+            </ul>
+            <ul class="menu-list">
+                <li class="li-item4 li-menu"><a class="a-menu-list" href="#lots-navigation">Lots</a>
+                    <ul class="sub-menu">
+                        <li><a class="sub-menu_links" href="#lots-navigation">BMW</a></li>
+                        <li><a class="sub-menu_links" href="#lots-navigation">Mercedes</a></li>
+                    </ul>
+                </li>
+                <li class="li-item5 li-menu"><a class="a-menu-list" href="#discounts-navigation">Discounts</a>
+                    <ul class="sub-menu">
+                        <li><a class="sub-menu_links" href="#discounts-navigation">BMW</a></li>
+                        <li><a class="sub-menu_links" href="#discounts-navigation">Mercedes</a></li>
+                    </ul>
+                </li>
+                <li class="li-item6 li-menu"><a class="a-menu-list" href="#news-navigation">News</a>
+                    <ul class="sub-menu">
+                        <li><a class="sub-menu_links" href="#news-navigation">BMW</a></li>
+                        <li><a class="sub-menu_links" href="#news-navigation">Mercedes</a></li>
+                    </ul>
+                </li>
+                <li  class="li-item7 li-menu"><a class="a-menu-list" >Company</a>
+                    <ul class="sub-menu">
+                        <li><a class="sub-menu_links" href="#about-navigation">About us</a></li>
+                        <li><a class="sub-menu_links" href="#footer">Contacts</a></li>
+                    </ul>
+                </li>
+                <div class="search-button_container">
+                    <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search model:" autofocus/> 
+                    <input class="button_for_search" type="submit"  value="Search" title="Start search"/>
+                    <input class="button_for_turn_back" type="button" value="Cancel" title="Cancel search"/>
+                </div>   
+                <li class="li-item8"><a class="a-menu-list" id="registration">Register</a></li>
+                <li class="li-item9"><a class="a-menu-list" id="sign_in">Sign in</a></li>
+            </ul>
+                <div class="basket">
+                    <img src="img/basket_filled.png">
+                    <a>Price:<span class='total_price'>0$</span></a>
+                    <button class='checkout'>Checkout</button>
+                </div>      
+        </nav>
+        <form id="register">
+            <img class="close-register_form" src="img/cancel.png" id="close_register" alt="close-icon"/>
+            <img class="icon-user" src="img/add-user.png" alt="user-icon"/>
+            <h1 class="register-header">Sign up as a new user</h1>
+            <p class="register-text">Register a free account to get full access to our auction marketplace and start bidding on vehicles right now!</p>
+            <input type="text" class="name-field" placeholder="Your full name" value="" required/>
+            <input type="email" class="email-field" placeholder="Email" value="" required/>
+            <input type="phone_number" class="phone_number-field" value="" placeholder="Phone Number" required/>
+            <input type="password" class="password-field" value="" placeholder="Password" required/>
+            <input type="password" class="confirm_password-field" value="" placeholder="Confirm password" required/>
+            <div class="choice1">
+                <input type="checkbox" id="terms">
+                <label for="terms" class="terms_accept">By checking this box you accept the terms and conditions governing the use of this site.</label>
+            </div>
+            <div class="choice2">
+                <input type="checkbox" id="letters">
+                <label for="letters" class="letter_accept">Yes, I would like to receive email newsletters</label>
+            </div>
+                <button class="sign_in">Sign in</button>
+        </form>
+        
+        <form id="login">
+            <img class="close-login_form" src="img/cancel.png" id="close_login" alt="close-icon"/>
+            <img class="icon-user-login" src="img/add-user.png" alt="user-icon"/>
+            <h1 class="register-header">Login</h1>
+            <p class="register-text">Enter your email and password below to access your secure member’s area.</p>
+            <input type="email" class="email-field-login" value="" placeholder="Email" title="Please enter your email here" required/>
+            <input type="password" class="password-field-login" value="" placeholder="Password" title="Please enter your password here" required/>
+            <button class="login_in">Login</button>
+            <div class="new-user">
+                <p class="new-user-text">New user?</p>
+                <a class="new-user-link" href="#">Register now</a>
+            </div>
+            <a class="forgot-password" href="#">Forgot your password?</a>
+        </form>
+        <section class="slider">
+            <img class="slider-prev" src="img/left-icon-slider.png" alt="previous-slider-icon"/>
+            <img name="slide" class="slider_image" alt="slider-image"/>   
+            <img class="slider-next" src="img/right-icon-slider.png" alt="next-slider-icon"/>
+            <div id="myProgress">
+                <div id="myBar">
+                    <div id="label"></div>
+                </div>
+            </div>
+            <p class="info-car"></p>
+        </section>
+    </header>
+        <h1 id="lots-navigation">Lots</h1>
+        <section id="lots">
+            <p class="filter-menu"><a class="filter all-cars" href="###">VIEW ALL</a> 
+                 <a href="###" id="bmwonly" class="filter">BMW Cars</a> 
+                 <a href="###" id="mercedesonly" class="filter">Mercedes Cars</a>
+            </p> 
+            <div class="lots-view-wrapper"> 
+                <img class="close-view-icon" src="img/cancel.png" alt="close-icon"/>
+                <div class="lots-view">
+                    <h2 class="lot-header-view"></h2>
+                    <img class="lot-view-image" src=' '   alt="lot-view-image"/>
+                    <p class="lot-model-view model"></p>
+                    <p class="lot-car_characteristics"></p>
+                    <span class="lot-view-price"></span>
+                    <p class="lot-car-history"></p>
+                    <Button class="buy view-button">Buy now</Button>
+                </div>
+            </div>
+            <div class="discount_cars bmwonly lot">
+                <h2 class="car-header">BMW</h2>
+                <img src="img/lot1.jpg" id=less class="first-image view-img" alt="lot1-image"/>
+                <p class=model>Model: I8</p>
+                <p class="car_characteristics">
+                    Egine: 1.5(251 h.p)<br/>
+                    Max speed: 250(k/h)<br/>
+                    Drive unit: four-wheel drive<br/> 
+                </p>
+                <div class="price-block">
+                    <p class="model">Price:</p> 
+                    <span class="price">300 000$</span>                 
+                </div>
+                <p class="car_history">
+                    The BMW i8 is a plug-in hybrid sports car developed by BMW. 
+                    The i8 is part of BMW's electric fleet "Project i" being marketed as a new sub-brand, BMW i. 
+                    The 2015 model year BMW i8 has a 7.1 kWh lithium-ion battery pack that delivers an all-electric range of 37 km (23 mi) 
+                    under the New European Driving Cycle. Under the United States Environmental Protection Agency cycle, the range in EV mode is 24 km (15 mi) 
+                    with a small amount of gasoline consumption. Its design is heavily influenced by the BMW M1 Homage concept car, which in turn pays 
+                    homage to BMW's last production mid-engined sports car prior to the i8: the BMW M1.
+                </p>
+                <Button class=buy>Buy now</Button>
+            </div>
+            <div class="bmwonly lot">
+                <h2 class="car-header">BMW</h2>
+                <img src="img/lot2.jpg" class="second-image view-img" alt="lot2-image"/>
+                <p class=model>Model: M3</p>
+                <p class="car_characteristics">
+                    Egine: 3.0(431 h.p)<br/>
+                    Max speed: 250(k/h)<br/>
+                    Drive unit: rear-wheel drive<br/> 
+                </p>
+                <div class="price-block">
+                    <p class="model">Price:</p> 
+                    <span class="price">87 516$</span>                 
+                </div>
+                <p class="car_history">
+                    The BMW M3 is a high-performance version of the 3 Series, developed by BMW's in-house motorsport division, BMW M GmbH. 
+                    M3 models have been derived from the subsequent generations of the BMW 3 Series.
+                    The initial model was available in a coupé body style. At times the M3 has also been available in saloon and convertible body styles. 
+                    Due to the coupé and convertible models no longer being part of the 3 Series range from 2015,the F82/F83 coupe and convertible models 
+                    are now called the M4 based on the newly introduced 4 Series. The M3 name remains in use solely for the saloon version.
+                    </p>
+                <Button class=buy>Buy now</Button>
+            </div>
+            <div class="bmwonly lot">
+                <h2 class="car-header">BMW</h2>
+                <img src="img/lot3.jpg" class="third-image view-img" alt="lot3-image"/>
+                <p class=model>Model: X5</p>
+                <p class="car_characteristics">
+                    Egine: 3.0(231 h.p)<br/>
+                    Max speed: 220(k/h)<br/>
+                    Drive unit: four-wheel drive<br/> 
+                </p>
+                <div class="price-block">
+                    <p class="model">Price:</p> 
+                    <span class="price">70 949$</span>                 
+                </div>
+                <p class="car_history">
+                    The BMW X5 is a mid-size luxury SUV produced by BMW. The first generation of the X5, with the chassis code E53, made its debut in 1999. 
+                    It was BMW's first SUV and it also featured all-wheel drive and was available with either manual or automatic transmission. 
+                    In 2006, the second generation X5 was launched, known internally as the E70, featuring the torque-split capable xDrive all-wheel drive 
+                    system mated to an automatic transmission, and in 2009 the X5 M performance variant was released as a 2010 model.
+                    BMW branded the X5 as a Sport Activity Vehicle (SAV) rather than an SUV, to emphasize its on-road ability despite its size.
+                </p>
+                <Button class=buy>Buy now</Button>
+            </div>
+            <div class="discount_cars mercedesonly lot">
+                <h2 class="car-header">Mercedes</h2>
+                <img src="img/lot4.jpg" class="fourth-image view-img" alt="lot4-image"/>
+                <p class=model>Model: Benz AMG GT</p>
+                <p class="car_characteristics">
+                    Egine: 4.0(510 h.p)<br/>
+                    Max speed: 310(k/h)<br/>
+                    Drive unit: rear-wheel drive<br/> 
+                </p>
+                <div class="price-block">
+                    <p class="model">Price:</p> 
+                    <span class="price">216 665$</span>                 
+                </div>
+                <p class="car_history">
+                    Mercedes-AMG GmbH, commonly known as AMG, is the high performance brand used by Mercedes-Benz. AMG independently hires engineers 
+                    and contracts with manufacturers to customize Mercedes-Benz AMG vehicles. Mercedes-AMG is headquartered in Affalterbach, Baden-Württemberg, Germany.
+                    AMG was originally an independent engineering firm specializing in performance improvements for Mercedes-Benz vehicles; 
+                    Daimler-Benz AG took a controlling interest in 1999, then became sole owner of AMG in 2005. Mercedes-AMG GmbH is now a wholly owned 
+                    subsidiary of Daimler AG. AMG models typically have more aggressive looks, a higher level of performance, better handling, 
+                    better stability and more extensive.
+                </p>
+                <Button class=buy>Buy now</Button>
+            </div>
+             <div class="discount_cars mercedesonly lot">
+                <h2 class="car-header">Mercedes</h2>
+                <img src="img/lot5.jpg" class="fifth-image view-img" alt="lot5-image"/>
+                <p class="model">Model: Benz GLE</p>
+                <p class="car_characteristics">
+                    Egine: 4.7i(435 h.p)<br/>
+                    Max speed: 250(k/h)<br/>
+                    Drive unit: four-wheel drive<br/> 
+                </p>
+                <div class="price-block">
+                    <p class="model">Price:</p> 
+                    <span class="price">84 856$</span>                 
+                </div>
+                <p class="car_history">
+                    The Mercedes-Benz M-Class (GLE-Class) is a mid-size luxury SUV produced by the German automaker Mercedes-Benz since 1997. 
+                    In terms of size, it is slotted in between the smaller GLC-Class (based on the C-Class) and the larger GLS-Class, with which it shares platforms. 
+                    For a short time, between 1999 and 2002, the M-Class was also built by Magna Steyr in Graz, Austria, for the European market, before all the production 
+                    moved to the U.S. plant near Vance, Alabama. From late 2012, the M-Class was also assembled at new plants in India and Indonesia.
+                </p> 
+                <Button class=buy>Buy now</Button>
+             </div>
+             <div class="discounted-item mercedesonly lot">
+                <h2 class="car-header">Mercedes</h2>
+                <img src="img/lot6.jpg" class="sixth-image view-img" alt="lot6-image"/>
+                <p class=model>Model: Benz S-CLASS MAYBACH</p>
+                <p class="car_characteristics">
+                    Egine: 6.0(630 h.p)<br/>
+                    Max speed: 250(k/h)<br/>
+                    Drive unit: rear-wheel drive<br/> 
+                </p>
+                <div class="price-block">
+                    <p class="model">Price:</p> 
+                    <span class="price">260 774$</span>                 
+                </div>
+                <p class="car_history">
+                    The Mercedes-Benz S-Class Maybach appeared before the world public at the April Shanghai international automobile exhibition 2017, 
+                    and its sales will begin only in early 2018. In fact, the car is the first and rather deep restyling model of the sample in 2014. 
+                    The manufacturer finalized the technical stuffing, added some interesting options and slightly retouched the design. First of all, 
+                    new headlights with headlights with large focusing lenses and enlarged sections of LED daytime running lights rush into the eyes. 
+                    The radiator grill has also been radically transformed, but at the same time it retained its firm design.
+                </p> 
+                <Button class=buy>Buy now</Button>
+             </div>
+             <button id="add-lot-button"> + </button>
+             <form enctype="multipart/form-data" method="dialog" id="add-lot-form">
+                <img class="close-add-lot-form" src="img/cancel.png" alt="close-icon"/>
+                <label for="text" class="design">Car name</label>
+                <input type="text" id="car_name" placeholder="Input car name" title="Example: BMW | Mercedes..." required/>
+                <label for="photo" class="design">Select photo</label>
+                <input type="file" id="photo" required/>
+                <label for="model" class="design">Car model</label>
+                <input type="text" id="model" placeholder="Input car model" title="Example: I8 | M3..." required/>
+                <label for="characteristics" class="design">Car characteristics</label>
+                <input type="text" id="engine" placeholder="Input engine capacity(h.p)"  title="Example: 1.6(127 h.p) | 2.0(210 h.p) | 3.0(260 h.p)..." required/>
+                <input type="text" id="speed" placeholder="Input max speed" title="Example: 170 | 225 | 320..." required/>
+                <input type="text" id="drive-unit" placeholder="Input drive-unit" title="Example: four-wheel drive | rear-wheel drive | forward-wheel drive..." required/>
+                <label for="price" class="design">Price</label>
+                <input type="text" id="price" placeholder="Input car price" title="Example: 300 000..." required/>
+                <button id="add-lot-accept" class="save">Save</button>
+            </form>  
+        </section>
+        <h1 id="discounts-navigation">Discounts</h1>
+        <section id="discounts">
+            <div class="discount-lot1">
+                <div class="discount-lot1-photo">
+                    <img class="discount-lot1-img" src="img/lot1.jpg" alt="discount-lot1-image"/>
+                </div>
+                <div class="discount-lot1-information">
+                    <p class=model>Model: I8</p>
+                    <p class="car_characteristics">
+                        Egine: 1.5(251 h.p)<br/>
+                        Max speed: 250(k/h)<br/>
+                        Drive unit: four-wheel drive<br/> 
+                        <strike>Old Price: 300 000$</strike><br/>
+                        New Price: <span class='price'>295 000$</span>
+                    </p>
+                    <Button class="buy">Buy now</Button>
+                </div>
+            </div>
+            <div class="discount-lot2">
+                <div class="discount-lot2-photo">
+                    <img class="discount-lot2-img" src="img/lot4.jpg" alt="discount-lot2-image"/>
+                </div>
+                <div class="discount-lot2-information">
+                    <p class=model>Model: Benz AMG GT</p>
+                    <p class="car_characteristics">
+                        Egine: 4.0(510 h.p)<br/>
+                        Max speed: 310(k/h)<br/>
+                        Drive unit: rear-wheel drive<br/> 
+                        <strike>Old Price: 216 665$</strike><br/>
+                        New Price: <span class='price'>211 665$</span>
+                        </p>
+                        <Button class="buy">Buy now</Button>
+                </div>
+            </div>
+            <div class="discount-lot3">
+                <div class="discount-lot3-photo">
+                    <img class="discount-lot3-img" src="img/lot5.jpg" alt="discount-lot3-image"/>
+                </div>
+                <div class="discount-lot3-information">
+                    <p class=model>Model: Benz GLE</p>
+                    <p class="car_characteristics">
+                        Egine: 4.7i(435 h.p)<br/>
+                        Max speed: 250(k/h)<br/>
+                        Drive unit: four-wheel drive<br/> 
+                        <strike>Old Price: 84 856$</strike><br/>
+                        New Price: <span class='price'>79 856$</span>
+                    </p>
+                    <Button class="buy">Buy now</Button>
+                </div>
+            </div>
+        </section>
+        <h1 id="news-navigation">News</h1>
+        <section id="news">
+            <div class="news-bmw">
+                <h2 class="bmw-news-header">2019 BMW Concept ALPINA B7 Exclusive Edition available in Canada</h2>
+                <div class="news-bmw-images">
+                    <img class="news-bmw-images-first"  src="img/bmw-news-photo1.jpg" alt="bmw-news-photo1"/>
+                    <img class="news-bmw-images-second" src="img/bmw-news-photo2.jpg" alt="bmw-news-photo2"/>
+                    <img class="news-bmw-images-third"  src="img/bmw-news-photo3.jpg" alt="bmw-news-photo3"/>
+                    <img class="news-bmw-images-fourth" src="img/bmw-news-photo4.jpg" alt="bmw-news-photo4"/>
+                    <img class="news-bmw-images-fifth"  src="img/bmw-news-photo5.jpg" alt="bmw-news-photo5"/>
+                </div>
+                <h3 class="bmw-news-header2">BMW Canada introduces a limited-edition model created specifically for the Canadian market with ALPINA. 
+                    The 2019 BMW ALPINA B7 Exclusive Edition is a bespoke version 
+                </h3>
+                <p class="bmw-news-text">BMW Canada introduces a limited-edition model created specifically for the Canadian market with ALPINA. 
+                    The 2019 BMW ALPINA B7 Exclusive Edition is a bespoke version of the ultra-select BMW ALPINA B7. 
+                    Only 21 units will be produced, each carefully crafted to offer extraordinary comfort and exclusivity. 
+                    The BMW ALPINA B7 Exclusive Edition features unique design elements and exceptional performance. 
+                    Available at select BMW retailers in July, 2018, the vehicle honours a unique partnership,
+                    and Canada’s love of luxury and performance.
+                    On the outside, black chrome exterior design elements and badging are supplemented by deep black, 
+                    21-inch ALPINA Classic lightweight forged wheels. 
+                    Each of the 21 units features one of three BMW paintwork colours: Individual Frozen Black, Individual Frozen Grey or Black Sapphire Metallic. 
+                    Seven of each colour will be available.
+                </p>
+            </div>
+            <div class="news-mercedes">
+                <h2 class="mercedes-news-header">2019 Mercedes-Benz Concept EQ Exclusive Edition available in USA</h2> 
+                <div class="news-mercedes-images">
+                    <img class="news-mercedes-images-first"  src="img/mercedes-news-photo1.jpg" alt="mercedes-news-photo1"/>
+                    <img class="news-mercedes-images-second" src="img/mercedes-news-photo2.jpg" alt="mercedes-news-photo2"/>
+                    <img class="news-mercedes-images-third"  src="img/mercedes-news-photo2.jpg" alt="mercedes-news-photo3"/>
+                    <img class="news-mercedes-images-fourth" src="img/mercedes-news-photo2.jpg" alt="mercedes-news-photo4"/>
+                    <img class="news-mercedes-images-fifth"  src="img/mercedes-news-photo2.jpg" alt="mercedes-news-photo5"/>
+                </div>
+                <h3 class="mercedes-news-header2">Mercedes USA introduces a limited-edition model created specifically for the USA market with EQ. 
+                    The 2019 Mercedes-Benz Concept EQ Exclusive Edition is a bespoke version 
+                </h3>
+                <p class="bmw-news-text">No matter how hard automakers and engineers may try, 
+                    it's impossible to turn an internal-combustion engine into a silent operator.
+                    However, as the auto industry shifts to battery packs and electric motors, silence ultimately wins out.
+                    Mercedes-Benz has created a cheeky reminder in the form of a video advertisement to show consumers the future bids goodbye to noise.
+                    The video features the Generation EQ concept from the 2016 Paris auto show driving around a test track. 
+                    The concept will spawn the production Mercedes-Benz EQC electric SUV.
+                    Strangely, we hear engine noises coming from the battery-electric vehicle. 
+                    That all comes to an end when the driver stops the futuristic crossover SUV and asks the passenger, the source of the noise, to exit. 
+                    The engine impersonator is none other than human beatboxer Daniel Jovanov, an Australian native known for his sound effects and car noises.
+                </p>
+            </div> 
+        </section>
+        <section id="about">
+            <h1 id="about-navigation">About</h1>
+            <p class="about-presentation">World Auto Auction is an online marketplace that connects to all of the major salvage 
+                & insurance vehicle auction houses in North America. We provide our customers with access to over 200,000 auction vehicles all accessible 
+                from one convenient place by any internet connected device located anywhere in the world.
+            </p>
+            <img src="img/about-photo.jpg" alt="main-office-image"/>
+            <h3 class="about-header">Who we are?</h3>
+            <p class="about-text">With access to the largest database of used & salvage auction vehicles our customers enjoy unprecedented options 
+                when searching for and bidding on auction vehicle inventory.<br/><br/>
+                Our world class customer support is available throughout the day to ensure you are fully informed every step of the way through 
+                the auction bidding and buy now process. Our goal is not to get you to just buy a vehicle. Our goal is to make sure you buy 
+                the right vehicle for you at the best possible price. That means assisting you to understand the auction process and providing 
+                insight based on our years of experience buying vehicles at auction.<br/><br/>          
+                We have the largest database of cars. We have the most knowledgeable buyer’s agents in the business. 
+                And we have the best customer support team ready to help you with any request.<br/><br/>            
+                We have also partnered with great lender partners who can help you get Financing for the vehicle that you want. 
+                Take advantage of attractive financing options with low rates, monthly payments and NO DOWN PAYMENT*. 
+                To see if you Pre-qualify for financing, just fill out the short Application and start getting offers. 
+                Keep in mind that Pre-qualifying does not affect your credit score. It’s that quick and easy!<br/><br/>           
+                From start to finish when you work with World Auto Auction you will be taken care of and treated like the VIP customer that you are. 
+                We have helped thousands of buyers from dozens of countries buy and ship their dream cars while spending a fraction of the retail price to get them. 
+                It’s a win win situation for us and for you. So join us today and start shopping for your dream car. 
+                Then contact us so we can help walk you through the bidding process and ultimately winning that auction!<br/><br/>
+                We very much look forward to working with you!
+            </p>
+            	<div class="advantages">
+                    <div class="content1_advantages">
+                        <h3 class="header_advantages1">100% Secure Deposits</h3>
+                        <p class="text1_advantages">
+                            All deposits are made via our SSL secure payment gateway.
+                            Your payment details are never stored on our servers 
+                            ensuring your personal information is completely private and
+                            secure. Deposits are 100% refundable should you decide not 
+                            to make a vehicle purchase with us. 
+                        </p>
+                    </div>
+                    <div class="content2_advantages">
+                        <h3 class="header_advantages2">Easy Shipping & Export</h3>
+                        <p class="text2_advantages">
+                            When you win an auction we can arrange low cost shipping of 
+                            your vehicle anywhere in the United States or internationally. 
+                            If you prefer to arrange your own shipping we can also 
+                            accommodate you as well. We’ve shipped 1000s of cars to 
+                            dozens of countries around the world. 
+                        </p>
+                    </div>
+                    <div class="content3_advantages">
+                        <h3 class="header_advantages3">Live Vehicle Auctions</h3>
+                        <p class="text3_advantages">
+                            With a database consisting of over 200,000 auction vehicles 
+                            at any one time we are the largest live vehicle auction 
+                            marketplace online. We connect to every salvage and 
+                            insurance vehicle auction house so you can shop them all at  
+                            once from any internet connected device anywhere in the
+                            world.
+                        </p>
+                    </div>
+                </div>
+        </section>
+        <section id="footer">
+            <div class="footer-info1">
+                <span class="country">USA</span>
+                <p class="coutry-number">+1-305-507-1641</p>
+                <span class="country">UK</span>
+                <p class="coutry-number">+44-20-3198-8709</p>
+                <span class="country">Ukraine</span>
+                <p class="coutry-number">+380-68-861-11-22</p>
+            </div>
+            <div class="footer-info2">
+                <span class="official-office">World Auto Auction, LLC - Head Office</span>
+                <p>20200 W. Dixie Hwy, Suite 1001<br/>
+                   Miami, Florida<br/>
+                   United States   33180<br/>
+                   +1-800-680-8010<br/>
+                   info@autoauctionmall.com</p>
+            </div>
+            <div class="footer-info3">
+                    <span class="ukraine-office">Ukraine - Affiliate Office:</span>
+                    <p>Geroyev Street, ATO 35<br/>
+                       Building 40, Office 1<br/>
+                       Kryvoy Rog<br/>
+                       Ukraine<br/></p>
+            </div>
+            <div class="privacy">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.147045839828!2d-80.15047188497493!3d25.963217383545672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ac5e74403639%3A0xe147058b133589e1!2s20200+W+Dixie+Hwy+%231001%2C+Miami%2C+FL+33180%2C+USA!5e0!3m2!1sen!2sua!4v1530363539240"></iframe>
+                <p>© 2018 All rights reserved. - WorldAutoAuction.com</p>
+                <a class="term-rules" href="#">Terms of Use</a> - <a href="#" class="privacy-rules">Privacy Policy</a>
+            </div>
+        </section>
+    <script src="javascript.js"></script>
+</body>
+</html>

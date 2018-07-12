@@ -1,0 +1,1595 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body,html{
+    width: auto;
+    height: auto;
+    font-family: 'PT Sans Narrow', sans-serif;
+    background:url('img/background.jpg') no-repeat top/cover;
+}
+.navbar{
+    width: 100%;
+    height:auto;
+    background-color: #222222;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    box-sizing: border-box;
+    align-items: center;
+}
+.toggle{
+    display: none;
+    font-size: 30px;
+    color:white;
+    position: absolute;
+    background-color: #222222;
+    top:0px;
+}
+li[class*="li-item"]{
+    box-sizing: border-box;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    height: auto;
+    padding: 0 2% 0 2%;
+    border-right:2px solid white;      
+}
+.network-icons{
+    display: flex;
+    flex-direction: row;
+    width: 12%;
+    min-width: 50px;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.network-icons .li-item1,
+.network-icons .li-item2,
+.network-icons .li-item3{
+    border: none;
+    padding: 0;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+}
+.a-network-icons{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+.li-item4 .a-menu-list,
+.li-item6 .a-menu-list,
+.li-item7 .a-menu-list{
+    margin-left: 1px;
+    color: white;
+    width: 100%; 
+}
+.li-item5 .a-menu-list{
+    color: red;
+    width: 100%; 
+}
+.li-item4{
+    border-left: 2px solid white;
+}
+.li-item4,
+.li-item5,
+.li-item6,
+.li-item7{
+    width: 10.5%;
+}
+.li-item6,
+.li-item7,
+.li-item8{
+    color:white;
+}
+.menu-list .li-item8{
+    padding-left: 6%;
+    width: 15%;
+    min-width: 120px;
+    height: 69px !important;
+}
+.li-item8 .a-menu-list{
+    position: relative;
+}
+.li-item8 .a-menu-list::before{
+    content: url(img/icon-registration.png);
+    position: absolute;
+    right: 100%;
+    top:-50%;
+}
+.menu-list .li-item9{
+    color: cyan;
+    padding-left: 8%;
+    border-right:none;
+    width: 15%;
+    min-width: 120px;
+    border-right: 2px solid white;
+    height: 69px !important;
+}
+.li-item9 .a-menu-list{
+    position: relative;
+}
+.li-item9 .a-menu-list::before{
+    content: url(img/icon-enter.png);
+    position: absolute;
+    right: 100%;
+    top:2%;
+}
+.menu-list{
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    min-width: 300px; 
+}
+.a-menu-list{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    width:auto;
+}
+.sub-menu{
+    width: 100%;
+    height: 2%;
+    position: absolute;
+    top:100%;
+    left: -1.8%;
+    z-index: 100;
+    background-color:#222222;
+    list-style: none;
+    color: yellow;
+    text-align: center;
+    border:2px solid white;
+    font-size: 20px;
+    opacity: 0;
+    list-style-type:disc;
+    list-style-position: initial;
+    transition: opacity 1s,height 1s linear;
+    overflow: hidden;
+}
+.sub-menu_links{
+    color:white;
+    text-decoration: none;
+}
+.li-menu{
+    position: relative;
+}
+.search-button_container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 25%;
+    height: auto;
+    border:2px solid white;
+    box-sizing: border-box;
+    min-width: 140px;
+}
+.place_for_search{
+    box-sizing: border-box;
+    padding-left: 2%;
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 5%;
+    width: 60%;
+    min-height:100%; 
+}
+.button_for_search,
+.button_for_turn_back{
+    box-sizing: border-box;
+    height:50%;
+    border: 0;
+    background-color:black;
+    color:yellow;
+    font-weight:bold;
+    font-size:15px;
+    width: 40%;
+    border:1px solid white;
+}
+.basket{
+    margin-left: auto;
+    color: white;
+    width: 15%;
+    max-width: 15%;
+    min-width: 240px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: stretch;
+    margin-right: auto;
+}
+.checkout{
+    box-sizing: border-box;
+    height:30px;
+    width: auto;
+    border: 1px solid white;
+    background-color:black;
+    color:yellow;
+    font-weight:bold;
+    font-size:15px;
+    cursor: pointer;
+}
+.basket img{
+    margin-left: auto;
+}
+.basket button{
+    margin-right: auto;
+}
+#lots-navigation,
+#discounts-navigation,
+#news-navigation,
+#about-navigation{
+    margin-top:3%;
+    text-align: center;
+    font-size: 45px;
+}
+#register,#login{
+    width: 55%;
+    height: auto;
+    background-color: #333333;
+    margin: auto;
+    margin-top: 2%;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color:white;
+    border-radius: 5%;
+    position: absolute;
+    z-index: 5;
+    left: 25%;
+    top:7%;
+}
+#register{
+    height: 80%;
+    left: 22.5%;
+}
+.icon-user,
+.icon-user-login{
+    margin-top: 3%;
+    width: 10%;
+    height: 18%;
+}
+.icon-user-login{
+    width: 16%;
+    height: 26%;
+}
+.close-register_form,
+.close-login_form{
+    position: absolute;
+    top:2%;
+    left: 91%;
+    cursor: pointer;
+}
+.name-field,
+.email-field,
+.phone_number-field,
+.password-field,
+.confirm_password-field,
+.email-field-login,
+.password-field-login{
+    width: 67%;
+    height: 15%;
+    margin-top: 2%;
+    background: whitesmoke;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    padding-left: 3%;
+    border:2px solid black;
+    font-size: 22px;
+}
+.register-text{
+    width: 80%;
+    text-align: center;
+    font-size:20px;
+}
+.register-header{
+    text-align: center;
+    color: #FABC06;
+}
+.choice2,.choice1{
+    display: flex;
+    width: 90%;
+    height: auto;
+    flex-direction: row;
+    margin-left: 15%;
+    margin-top: 2%;
+    word-wrap:break-word;    
+}
+.choice2{
+    margin-top: 5%;
+}
+input[type="checkbox"]{
+    width:25px;
+    height: 20px;
+}
+.sign_in,
+.login_in{
+    margin-top:2%;
+    border:0;
+    background-color: #FABC06;
+    color:white;
+    border-radius:7px;
+    width:23%;
+    height: 15%;
+    margin-bottom:2%;
+    cursor: pointer;
+    font-size: 20px;
+}
+.letter_accept,
+.terms_accept{
+    cursor: pointer;
+}
+::-webkit-input-placeholder{
+    padding-left: 3%;
+    font-size:15px;
+    color: black;
+}
+#login{
+    width:35%;
+    height: 60%;
+    border-radius: 17px;
+    left: 32%;
+    top:25%;
+    padding-bottom: 1%;
+}
+.new-user{
+    display: flex;
+    width: 90%;
+    height: auto;
+    flex-direction: row;
+    word-wrap:break-word;
+    justify-content: center;
+
+}
+.new-user-link,
+.new-user,
+.forgot-password{
+    color: white;
+    font-size: 20px;
+}
+.new-user-link{
+    margin-left: 2%;
+}
+.slider{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    position:relative; 
+    margin-top:1%;
+}
+.slider_image{
+    width: 100%;
+    height: 60vh;
+}
+.slider-prev,.slider-next{
+    width: auto;
+    cursor: pointer;
+    height: auto;
+    position: absolute;
+    top: 40%;
+}
+.slider-prev{
+    left:-5%;
+}
+.slider-next{
+    right:-5%;
+}
+#myProgress{
+    position:relative;
+    width: 100%;
+    margin: auto;
+    height: 20px;
+    background: #ECEEE0;
+}
+#myBar{
+    position: absolute;
+    background-color: #CC9964;
+    bottom: 0;
+    position:relative;
+    width: 80%;
+    height: 100%;
+}
+#label{
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+.filter-menu{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around; 
+    position: absolute; 
+    top:130%;
+    left: 2%;
+    border:2px solid black;
+    width: 10%;
+    height: 25%;
+    background-color: white;
+}
+.filter{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+.filter:hover{
+    font-size:20px;
+    background-color: red;
+}
+#lots{
+    display: flex;
+    width: 64%;
+    text-align: center;
+    margin:auto;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    margin-top:1%;
+}
+.lot{
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-top:2%;
+    margin-right: auto;
+    height: 40%;
+}
+.lot .first-image,
+.second-image,
+.third-image,
+.fourth-image,
+.fifth-image,
+.sixth-image,
+.view-img{
+    width: 100%;
+}
+.buy{
+    box-sizing: border-box;
+    height:30px;
+    width: 40%;
+    border: 0;
+    background-color:black;
+    color:yellow;
+    font-weight:bold;
+    font-size:15px;
+    cursor: pointer;
+}
+.model,
+.car_characteristics,
+.about-presentation,
+.about-text,
+.text1_advantages,
+.text2_advantages,
+.text3_advantages,
+.info-car,
+.lot-model-view,
+.lot-car_characteristics
+{
+    font-size: 20px;
+}
+.total_price,
+.price{
+    color:#F90306;
+    font-size: 23px;
+}
+.lot-disable{
+    opacity: 0;
+    transition: all 1s linear;
+    display: none;
+    
+}
+.lots-view-wrapper{
+    width: 100%;
+    height: 118%;
+    background-color:rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 0;
+    top:94%;
+    display: none;
+}
+.lots-view{
+    width: 70%;
+    height: auto;
+    z-index: 100;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    border-radius: 40px;
+    border:2px solid black ;
+}
+.lot-view-image{
+    margin-top:1%;
+    width: 65%;
+    height: 40%;
+    border-radius:40px;
+}
+.lot-header-view{
+    margin-top: 1%;
+}
+.view-button{
+    width: 160px;
+    height: 30px;
+    margin-top:1%;
+    margin-bottom:1%;
+    cursor: pointer;
+}
+.car_history{
+    display: none;
+}
+.lot-car-history{
+    width: 80%;
+    height: auto;
+    margin:auto;
+    text-align: justify;
+    font-size:20px;
+    margin-top:1%;
+}
+.close-view-icon{
+    width: 2%;
+    height: 3%;
+    position: absolute;
+    left: 81%;
+    top:5%;    
+    z-index: 200;
+    cursor: pointer;
+}
+#add-lot-button{
+    margin-top:3.5%;
+    width: 32%;
+    border:3px dashed black;
+    height: 168px;
+    font-size: 64px;
+    cursor: pointer;
+    
+    margin-right: auto;
+}
+.price-block1,.price-block{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    width: auto;
+}
+#add-lot-form{
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    width: 40%;
+    height: 70%;
+    background-color:#6CE6C1;
+    top:15%;
+    left: 30%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+}
+.close-add-lot-form{
+    position: absolute;
+    top:3%;
+    left: 93%;
+    width: 4%;
+    height: 4%;
+    cursor: pointer;
+}
+#history,
+#car_name,
+#model,
+#history,
+#engine,
+#speed,
+#drive-unit,
+#price{
+    width: 50%;
+    border-radius: 5px;
+    border:1px solid black;
+    height: 4%;
+}
+#photo{
+    width: 34%;
+}
+#history{
+    height: 20%;
+}
+.design{
+    font-size:18px;
+    font-weight: bold;
+    color:#FE0000;
+}
+.save{
+    background-color:black;
+    color:yellow;
+    font-weight: bold;
+    width: 25%;
+    height: 6%;
+    cursor: pointer;
+    font-size:17px;
+}
+#discounts{
+    display: flex;
+    width: 64%;
+    margin:auto;
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+    margin-top:1%;
+    flex-direction: column;
+}
+.discount-lot1-photo,
+.discount-lot2-photo,
+.discount-lot3-photo{
+    width:50%;
+}
+.discount-lot1-photo img,
+.discount-lot2-photo img,
+.discount-lot3-photo img{
+    width: 100%;
+}
+.discount-lot1,
+.discount-lot2,
+.discount-lot3{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.discount-lot1-information,
+.discount-lot2-information,
+.discount-lot3-information{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#news{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top:1%;
+    justify-content: space-around;
+    padding-bottom: 2%;
+}
+.news-bmw,
+.news-mercedes{
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+    justify-content: flex-start;
+}
+.bmw-news-header,
+.bmw-news-header2,
+.mercedes-news-header,
+.mercedes-news-header2{
+    text-align: center;
+    margin-top:1%;
+    font-weight: bold;
+}
+.news-bmw-images-first,
+.news-mercedes-images-first{
+    width: 98.8%;
+    height: 53vh;
+}
+.news-bmw-images-second,
+.news-bmw-images-third,
+.news-bmw-images-fourth,
+.news-bmw-images-fifth,
+.news-mercedes-images-second,
+.news-mercedes-images-third,
+.news-mercedes-images-fourth,
+.news-mercedes-images-fifth{
+    width: 24.3%;
+    height: 15vh;
+}
+.bmw-news-text{
+    margin-top:2%;
+    text-align: justify;
+    font-size:20px;
+}
+#about{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top:1%;
+    justify-content: space-around;
+    margin: auto;
+    background-color: #333333;
+    color: white;
+}
+.about-presentation{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    padding:2% 0 2% 0;
+}
+.about-header{
+    background-color:#E7E6E6;
+    color: #000000;
+    text-align: center;
+    padding-top:1%;
+    font-size:25px;
+}
+.about-text{
+    background-color:#E7E6E6;
+    padding:0 20% 3% 20%;
+    color: #000000;
+}
+.advantages{
+    height:auto;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color:white;
+    width: 100%;
+    border-top:3px solid black;
+    border-bottom:3px solid black;
+    padding:0 1% 0 1%;
+    box-sizing: border-box;
+}
+.advantages .text1_advantages,.text2_advantages,.text3_advantages{
+    font-size: 18px;
+    color: black;
+}
+.advantages .header_advantages1,
+.advantages .header_advantages2,
+.advantages .header_advantages3{
+    position: relative;
+    margin-bottom: 80px;
+    font-size:30px;
+    color: #000000;
+    height: auto;
+}
+.content1_advantages,
+.content2_advantages,
+.content3_advantages{
+    width: 30%;
+}
+.content1_advantages{
+    border-right: 3px solid black;
+    padding-right:1%;
+}
+.content3_advantages{
+    border-left: 3px solid black;
+    padding-left:1%;
+}
+.advantages .header_advantages1::after,
+.advantages .header_advantages2::after,
+.advantages .header_advantages3::after{
+    position:absolute;
+    content: url(img/advantages-icon.png);
+    top: 140%;
+    left:40%;
+}
+.advantages .header_advantages2::after{
+    content: url(img/advantages-icon2.png);
+}
+.advantages .header_advantages3::after{
+    content: url(img/advantages-icon3.png);
+}
+#footer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    background-color: #333333;
+    color: white;
+    padding: 2% 0 2% 0;
+}
+.country,
+.official-office,
+.ukraine-office{
+    color:#FABC1E;
+}
+.footer-info1,
+.footer-info2,
+.footer-info3{
+    text-align: center;
+    width: 33.3%;
+}
+.privacy{
+    margin-top:3%;
+    width: 100%;
+    text-align: center;
+}
+.term-rules,
+.privacy-rules{
+    color: #FABC1E;
+    text-decoration: underline;
+}
+input[placeholder="Search your lot:"]{
+    color:black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
+.map{
+    width: 95%;
+    height: 400px;
+}
+.menu-list li:hover,
+.checkout:hover{
+    background-color:#918C92;
+}
+.li-item1 .a-network-icons .telegram-link:hover,
+.li-item2 .a-network-icons .facebook-link:hover,
+.li-item3 .a-network-icons .vkontakte-link:hover
+{
+    filter:grayscale(100%) 
+    brightness(60%) sepia(100%) hue-rotate(-225deg) 
+    saturate(600%) contrast(1.5);
+}
+.li-item8:hover .a-menu-list::before,
+.li-item9:hover .a-menu-list::before{
+    filter:invert(100%)  grayscale(100%) 
+    brightness(40%) sepia(100%) hue-rotate(-45deg) 
+    saturate(600%) contrast(1.5);
+}
+.li-menu:hover .sub-menu{
+    top:100%;
+    opacity: 1;
+    height: 75%;
+}
+.button_for_search:hover,
+.button_for_turn_back:hover{
+    background-color:#918C92;
+    cursor: pointer;
+}
+.icon-user-login:hover,
+.icon-user:hover,
+.terms_accept:hover,
+.letter_accept:hover,
+.register-text:hover{
+      filter:  grayscale(100%) 
+      brightness(40%) sepia(100%) hue-rotate(-50deg) 
+      saturate(600%) contrast(0.8);
+}
+.new-user-text:hover,
+.new-user-link:hover,
+.forgot-password:hover{
+      color: #FABC06;
+      cursor: pointer;
+}
+.password-field-login:hover,
+.email-field-login:hover,
+.name-field:hover,
+.email-field:hover,
+.phone_number-field:hover,
+.password-field:hover,
+.confirm_password-field:hover{
+      background-color:white;
+}
+.login_in:hover,
+.sign_in:hover{
+      background-color:#FFD800;
+  }
+.button_for_search:hover,
+.button_for_turn_back:hover,
+#show-form_register:hover,
+#show-form-login:hover{
+    background-color:#595959;
+}
+.close-register_form:hover,
+.close-login_form:hover,
+.close-view-icon:hover,
+.close-add-lot-form:hover{
+      filter:  grayscale(100%) 
+      brightness(200%) sepia(100%) hue-rotate(-50deg) 
+      saturate(600%) contrast(1);
+}
+.lot:hover{
+    border:2px solid black;
+    transform: scale(1.2) ;
+    box-shadow: 0 10px 100px 1px #FED700;
+    transition: all 2s linear;
+    z-index: 100;
+    background-color:#EEF0E2;
+    cursor: pointer;
+}
+.discount-lot1:hover,
+.discount-lot2:hover,
+.discount-lot3:hover{
+    background-color:#EEF0E2;
+    border:2px solid black;
+    transform: scaleX(1.1) scaleY(1.1);
+    box-shadow: 0 10px 100px 1px #FED700;
+    transition: all 2s;
+    z-index: 100;
+}
+.discount-lot1:hover .discount-lot1-img,
+.discount-lot2:hover .discount-lot2-img,
+.discount-lot3:hover .discount-lot3-img{
+    padding-left:0.5%;
+    padding-top:1%;
+    transform: scaleX(1) scaleY(1.02);
+    transition: all 0.5s;
+}
+.advantages:hover{
+    background-color:#EDE738;
+    transition: all 1.5s;
+}
+.content1_advantages:hover .header_advantages1,
+.content1_advantages:hover .text1_advantages,
+.content2_advantages:hover .header_advantages2,
+.content2_advantages:hover .text2_advantages,
+.content3_advantages:hover .header_advantages3,
+.content3_advantages:hover .text3_advantages{
+    color:red;
+    transition: all 1s;
+}
+@media only screen and (min-width: 320px) and (max-width: 767px)
+{
+    .filter-menu{
+      display: none;
+    }
+    .sub-menu{
+        display: none;
+    }
+    #myBar{
+        height: 60%;
+    }
+    .li-item9 .a-menu-list::before{
+        top:-50%;
+    }
+    .lot:hover,
+    .discount-lot1:hover,
+    .discount-lot2:hover,
+    .discount-lot3:hover{
+       transform: none;
+       transition: 0.1s;
+    }
+    ::-webkit-input-placeholder {
+         color:black;
+         font-size:14px;
+    }
+    #register,#login,#add-lot-form{
+        width: 70%;
+        left: 15%;
+        height: auto;
+        top: 15%;
+    }
+    #login{
+        width: 65%;
+    }
+    .icon-user-login{
+        width: 20%;
+    }
+    .register-text,
+    .new-user-text,
+    .new-user-link,
+    .forgot-password{
+        font-size: 15px;
+    }
+    .name-field,
+    .email-field,
+    .phone_number-field,
+    .password-field,
+    .confirm_password-field{
+        width: 86%;
+        height: 10%;
+    }
+    .email-field-login,
+    .password-field-login{
+        height: 10%;
+    }
+    #close_register,
+    #close_login{
+        left: 85%;
+    }
+    .icon-user{
+        width: 20%;
+        height: 27%;
+    }
+    .terms_accept,
+    .letter_accept{
+        font-size:15px;
+        margin-left: 5%;
+        width: 85%;
+    }
+    .choice1,
+    .choice2{
+        height: 23%;
+        text-align: left;
+        margin-left:auto;
+        margin-right: auto;
+    }
+    .choice2{
+        margin-top:2%;
+        height: 16%;
+    }
+    .sign_in,.login_in{
+        width: 130px;
+        height: 30px;
+        font-size: 20px;
+        margin-bottom: 3%;
+    }
+    #speed,
+    #drive-unit{
+        margin-top:2%;
+    }
+    #history{
+        padding-bottom: 15%;
+    }
+    .save{
+        margin: 2% 0 2% 0;
+    }
+    .network-icons,
+    .menu-list,
+    .basket{
+        display: none;
+    }
+    .toggle{
+        display: block;
+    }
+    .network-icons_active,
+    .menu-list_active,    
+    .basket_active{
+        width: 99%;
+        display: flex;
+    }
+    .network-icons_active{
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .menu-list_active{
+        flex-direction: row;
+        width: 100%;
+    }
+    .li-item8{
+        margin-left: auto;
+        height: 50px !important;
+    }
+    .li-item9{
+        margin-right: auto;
+        height: 50px !important;   
+    }
+    .search-button_container{
+        width: 100%;
+    }
+    .basket_active{
+        margin-right: auto;
+    }
+    .menu-list .li-item8{
+        padding-left:22%;
+        padding-right: 5%;
+        width: 49%;
+    }
+    .menu-list .li-item9{
+        width: 49%;
+        padding-left: 25%;
+        padding-right: 0;
+        border-right: 0;
+    }
+    .li-item4,.li-item5,.li-item6,.li-item7{
+        width: 25%;
+        padding: 0 1% 0 1%;
+    }
+    .li-item7{
+        border-right: 0;
+    }
+    .menu-list .li-item4{
+        border-left: 0; 
+    }    
+    .slider{
+        width: 80%;
+    }
+    .slider_image{
+        height: auto;
+    }
+    .slider-prev{
+        left: -7%;
+        top:35%;
+        width: 25px;
+    }
+    .slider-next{
+        right:-8%;
+        top:35%;
+        width: 25px;
+    }
+    #add-lot-button{
+        width:100%;
+        margin-left:0;
+    }
+    #lots{
+        width: 95%;
+    }
+    .lot{
+        width: 100%;
+    }
+    .lots-view-wrapper{
+        top:6%;
+    }
+    .lot-model-view{
+        border-bottom: 2px solid black;
+        font-size:23px;
+    }
+    .lot-car_characteristics{
+        border-top: 2px solid black;
+        font-size:23px;
+    }
+    .lot-view-image{
+        width: 90%;
+        border-radius: 10px;
+    }
+    .lot-car-history{
+        text-align: center;
+        border-top:2px solid black;
+        border-bottom:2px solid black;
+        font-size:22px;
+    }
+    .close-view-icon{
+       width: 20px;
+       height: 20px;
+       left: 75%;
+       top:2.5%;
+    }
+    #discounts{
+        width:95%;
+    }
+    .discount-lot1-photo,
+    .discount-lot2-photo,
+    .discount-lot3-photo{
+        width:100%;
+    }   
+    .discount-lot1,
+    .discount-lot2,
+    .discount-lot3{
+        width: 100%;
+        flex-direction: column;
+        margin:auto;
+        margin-bottom: 5%;
+    }
+    .discount-lot1-information,
+    .discount-lot2-information,
+    .discount-lot3-information{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }   
+    #news{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .news-bmw,.news-mercedes{
+        width: 95%;
+        margin-top: 2%;
+    }   
+    .news-bmw-images-second,
+    .news-bmw-images-third,
+    .news-bmw-images-fourth,
+    .news-bmw-images-fifth,
+    .news-mercedes-images-second,
+    .news-mercedes-images-third,
+    .news-mercedes-images-fourth,
+    .news-mercedes-images-fifth{
+        width: 48.8%;
+        height: auto;
+    }
+    #about{
+        height: auto;
+    }
+    .about-text{
+        padding: 0 5% 2% 5%;
+        text-align: justify;
+    }
+    .advantages{
+        padding-top: 2%;
+        padding: 0 5% 0 5%;
+        margin-bottom: 0;
+    }
+    #footer{
+        padding: 5% 0 10% 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+    .footer-info1,
+    .footer-info2,
+    .footer-info3{
+         width: 100%;
+         margin-top: 4%;
+    }
+    .map{
+        width: 95%;
+        height: 300px;
+    }
+    .term-rules,.privacy-rules{
+        font-size:20px;
+    }
+    .advantages{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        padding-bottom: 2%;
+        border-top:3px solid black;
+        border-bottom:3px solid black;
+    }
+    .content1_advantages,
+    .content2_advantages,
+    .content3_advantages{
+        width: 100%; 
+        border-right:0;
+        border-left:0; 
+    }
+    .content2_advantages{
+        border-top:3px solid black;
+        border-bottom:3px solid black;
+    }
+    .advantages .text1_advantages,
+    .text2_advantages,
+    .text3_advantages{
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1364px)
+{
+    .li-item9 .a-menu-list::before{
+        top:-40%;
+    }
+    #add-lot-form{
+        width: 60%;
+        margin:0;
+        left: 20%;
+        height: 89%;
+        top: 5%;
+    }
+    #speed,
+    #drive-unit{
+        margin-top:2%;
+    }
+    #history{
+        padding-bottom: 15%;
+    }
+    .design{
+        font-size: 22px;
+        font-weight: bold;
+    }
+    #history,
+    #car_name,
+    #model,
+    #engine,
+    #speed,
+    #drive-unit,
+    #price{
+        padding-bottom: 10px;
+    }
+    .save{
+        margin: 2% 0 2% 0;
+        font-size:20px;
+    }
+    .new-user,
+    .forgot-password{
+        height: auto;
+    }
+    .close-view-icon{
+        width: 30px;
+        height: 30px;
+        left: 78%;
+        top:5%;
+     }
+     .close-register_form{
+         left: 90%;
+     }
+     .close-login_form{
+         left: 85%;
+     }
+     #register{
+         max-width:85%;
+         margin:0;
+         left: 25%;
+         top: 18%;
+         justify-content: space-around;
+         height: auto;
+     }
+     .icon-user{
+         width:22%;
+         height: 32%;
+     }
+     .icon-user-login{
+         width: 25%;
+         height: 23%;
+     }
+     .name-field,
+     .email-field,
+     .phone_number-field,
+     .password-field,
+     .confirm_password-field,
+     .email-field-login,
+     .password-field-login
+     {
+         width: 86%;
+         height: 8%;
+     }
+     .register-text,
+     .new-user-text,
+     .new-user-link,
+     .forgot-password{
+         font-size: 20px;
+     }
+     ::-webkit-input-placeholder{
+         color:black;
+         font-size:18px;
+     }
+     #login{
+         justify-content: space-around;
+     }
+     .terms_accept,
+     .letter_accept{
+         font-size:20px;
+         margin-left: 5%;
+         width: 85%;
+     }
+     .choice1,
+     .choice2{
+         height: 35%;
+         text-align: left;
+         margin-left:auto;
+         margin-right: auto;
+     }
+     .choice2{
+         margin-top:5%;
+         height: 24%;
+         margin-bottom:auto;
+     }
+     .sign_in{
+         width: 170px;
+         height: 60px;
+         font-size: 25px;
+         margin-top: 3%;
+         margin-bottom: 3%;
+     }
+     .login_in{
+         width:150px;
+         height: 50px;
+     }
+    .network-icons{
+        width: 4%;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+    .menu-list{
+        width: 93%;
+        border-bottom: 2px solid white;
+    }
+    .navbar{
+        flex-wrap: nowrap;
+    }
+    .li-item4{
+        border-left: none;
+    }
+    .li-item4,.li-item5,.li-item6,.li-item7{
+        width:25% ;
+        box-sizing: content-box;
+        height: 80px !important;
+    }
+    .menu-list .li-item8{
+        width: 25%;
+        min-width: 100px;
+        padding-left: 10%;
+        padding-right: 2%;
+        box-sizing: border-box;
+        border-top:2px solid white;
+    }
+    .menu-list .li-item9{
+        width: 25%;
+        min-width: 100px;
+        padding-left: 11%;
+        padding-right: 2%;
+        box-sizing: border-box;
+        border-top:2px solid white;
+    }
+    .search-button_container{
+        width: 50%;
+    }
+    .basket{
+        width:10%;
+    }
+    .slider{
+        width:90%;
+    }
+    .slider-prev{
+        left: -5%;
+    }
+    #add-lot-button{
+        width: 45%;
+        margin-left: 1%;
+    }
+    #lots{
+        width: 95%;
+    }
+    .lot{
+        width: 48%;
+    }
+    #discounts{
+        width:95%;
+    }  
+    .discount-lot1,
+    .discount-lot2,
+    .discount-lot3{
+        width: 100%;
+        flex-direction: row;
+        margin-bottom: 5%;
+    }
+    .discount-lot1-img,
+    .discount-lot2-img,
+    .discount-lot3-img{
+        width: 100%;
+        height: 100%;
+    }
+    #news{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .news-bmw,.news-mercedes{
+        width: 95%;
+        margin-top: 2%;
+    }   
+    .news-bmw-images-second,
+    .news-bmw-images-third,
+    .news-bmw-images-fourth,
+    .news-bmw-images-fifth,
+    .news-mercedes-images-second,
+    .news-mercedes-images-third,
+    .news-mercedes-images-fourth,
+    .news-mercedes-images-fifth{
+        width: 49.1%;
+        height: auto;
+    }
+    .news-mercedes-images-first{
+        height: auto;
+    }
+   .about-text{
+        padding: 0 5% 3% 5%;
+   }
+   .advantages{
+        margin-bottom: 0;
+   }
+   #footer{
+        padding-top: 2%;
+   }
+}
+@media only screen and (min-width: 1367px){
+    .name-field,
+    .email-field,
+    .phone_number-field,
+    .password-field,
+    .confirm_password-field{
+        width: 86%;
+        height: 8%;
+    }
+    .register-text{
+        font-size: 25px;
+    }
+    .terms_accept,
+    .letter_accept{
+        margin-left:2%;
+        font-size: 25px;
+    }
+    .choice1,
+    .choice2{
+        margin-left: 0;
+    }
+    input[type="checkbox"]{
+        height: 38px;
+    }
+    .sign_in,
+    .login_in{
+        width: 30%;
+        height: 7%;
+        font-size: 25px;
+    }
+    .icon-user-login{
+        width:20%;
+        min-height: 20%;
+    }
+    #login{
+        height: 40%;
+    }
+    .login_in{
+        width: 50%;
+        min-height: 10%;
+    }
+    .new-user-link,
+    .new-user,
+    .forgot-password{
+        font-size:25px;
+    }
+    .forgot-password{
+        margin-top:4%;
+    }
+    #news{
+        width: 100%;
+    }
+    .news-bmw-images-first,
+    .news-mercedes-images-first{
+        height: 55vh;
+    }
+    .news-bmw-images-second,
+    .news-bmw-images-third,
+    .news-bmw-images-fourth,
+    .news-bmw-images-fifth,
+    .news-mercedes-images-second,
+    .news-mercedes-images-third,
+    .news-mercedes-images-fourth,
+    .news-mercedes-images-fifth{
+        width: 24.3%;
+        height: 15vh;
+    }
+    .advantages{
+        margin-bottom: 0;
+   }
+   #footer{
+        padding-top: 2%;
+   }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .lot .view-img{ 
+        height:40%; 
+    }
+    .discount-lot1,.discount-lot2,.discount-lot3{
+        height: 50%;
+    }
+   .li-item4 .a-menu-list,
+   .li-item5 .a-menu-list,
+   .li-item6 .a-menu-list,
+   .li-item7 .a-menu-list{
+        position: absolute;
+        top:30%;
+        left: 0;
+    }
+    .register-text{
+        height: 12vh;
+    }
+    .icon-user,
+    .icon-user-login{
+        height: auto;
+    }
+    .sign_in{
+        height: 115px;
+    }
+    .li-item9 .a-menu-list{
+        margin-top: 15%;
+    }
+    .li-item9 .a-menu-list::before{
+        top:0;
+    }
+    .li-item8 .a-menu-list{
+        margin-top: 30%;
+    }
+    .li-item8 .a-menu-list::before{
+        top:-25%;
+    }
+    .basket{
+        min-width: 0;
+    }
+    .basket img{
+        width: 35px;
+        height: 35px;
+    }
+}
