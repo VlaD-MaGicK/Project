@@ -49,35 +49,8 @@ desc[0].innerHTML=car_description[i];
     }
     desc[0].addEventListener("mouseover",stop);
     desc[0].addEventListener("mouseleave",start);
-var form_register = document.getElementById('register');
-var form_login = document.getElementById('login');
-var close1 = document.getElementById('close_register');
-var close2 = document.getElementById('close_login');
-var button1=document.getElementById('registration');
-var button2=document.getElementById('sign_in');
-
-    function show_register_form(){
-        form_register.style.display="flex";
-    }
-    function close_register_form(){
-        form_register.style.display="none";
-    }
-    button1.addEventListener("click",show_register_form);
-    close1.addEventListener("click",close_register_form);
-
-    function show_login_form(){
-        form_login.style.display="flex";
-    }
-    function close_login_form(){
-        form_login.style.display="none";
-    }
-
-    button2.addEventListener("click",show_login_form);
-    close2.addEventListener("click",close_login_form);
-
 var prev=document.getElementsByClassName('slider-prev');
 var next=document.getElementsByClassName('slider-next');
-desc[0].innerHTML=car_description[i];
     function prevclick(){
         if(i<1){
             width=0;
@@ -111,54 +84,100 @@ var buttonSearch=document.getElementsByClassName('button_for_search');
 var buttonSearchBack=document.getElementsByClassName('button_for_turn_back');
 var lot=document.getElementsByClassName('lot');
 var searchText=[];
+var searchCar=[];
     function searchLot(){
         for(var k=0;k<lot.length;k++){
             lot[k].classList.remove('lot-disable');
         }
         var search=document.getElementById('text-to-find').value;
-        
+
         for (var k=0;k<lot.length;k++)
-        {    
+        {   
+            searchCar[k]=lot[k].childNodes[1].innerHTML;
             searchText[k]=lot[k].childNodes[5].innerHTML;
-            
         }
          for (var j=0;j<searchText.length;j++)
         { 
-            if(searchText[j].toLowerCase().indexOf(search.toLowerCase())==-1){
+            if(search.toLowerCase()=="discounts"){
+                location.href = '#discounts-navigation'
+            }
+            else if(search.toLowerCase()==="news"){
+                location.href = '#news-navigation';
+            }
+            else if(search.toLowerCase()=="about"){
+                location.href = '#about-navigation';
+            }
+            else if(search.toLowerCase()=="contacts"){
+                location.href = '#footer';
+            }
+            else if(searchText[j].toLowerCase().indexOf(search.toLowerCase())==-1 && searchCar[j].toLowerCase().indexOf(search.toLowerCase())==-1){
                 lot[j].classList.add('lot-disable');
+                location.href = '#lots-navigation';
             }
         }
     }
     function searchLotBack(){
         for(var k=0;k<lot.length;k++){
+            document.getElementById('text-to-find').value="";
             lot[k].classList.remove('lot-disable');
-        }
+        } 
     }
-
     buttonSearch[0].addEventListener('click',searchLot);
     buttonSearchBack[0].addEventListener('click',searchLotBack);
+var form_register = document.getElementById('register');
+var form_login = document.getElementById('login');
+var close1 = document.getElementById('close_register');
+var close2 = document.getElementById('close_login');
+var button1=document.getElementById('registration');
+var button2=document.getElementById('sign_in');
+var sing_in_but=document.getElementsByClassName("sign_in");
+    sing_in_but[0].addEventListener("click",function(){
+        form_register.style.display="none";
+    })
+    function show_register_form(){
+        form_register.style.display="flex";
+    }
+    function close_register_form(){
+        form_register.style.display="none";
+    }
+    button1.addEventListener("click",show_register_form);
+    close1.addEventListener("click",close_register_form);
+
+    function show_login_form(){
+        form_login.style.display="flex";
+    }
+    function close_login_form(){
+        form_login.style.display="none";
+    }
+    button2.addEventListener("click",show_login_form);
+    close2.addEventListener("click",close_login_form);
 var total=0;
 var price=0;
 var end_price=0;
 var basket=document.getElementsByClassName('total_price')[0];
 var buttons = document.getElementsByClassName('buy');
+var lot_view=document.getElementsByClassName('lots-view-wrapper');
 var elements=[];
     for (var l = 0; l < buttons.length; l++) {
-    buttons[l].addEventListener('click', function() {
-        var target = event.target;
-        price=parseInt(target.parentNode.getElementsByClassName('price')[0].innerHTML.replace(' ',''));
-        end_price+=price;
-        basket.innerHTML=end_price+"$";
-        elements[l]+=target.parentNode.getElementsByClassName('model')[0].innerHTML+"\n";
+        buttons[l].addEventListener('click', function() {
+            var target = event.target;
+            lot_view[0].style.display="none";
+            price=parseInt(target.parentNode.getElementsByClassName('price')[0].innerHTML.replace(' ',''));
+            end_price+=price;
+            basket.innerHTML=end_price+"$";
+            elements[l]+=target.parentNode.getElementsByClassName('model')[0].innerHTML+"\n";
+            alert("Your purchase has been moved to the shopping cart");
+            clearInterval(auction_time);
+            document.getElementById("timer").innerHTML="30";
         }
     , false);}
 var checkout=document.getElementsByClassName('checkout')[0];
     checkout.addEventListener('click',function(){
-    alert('You have acquired:\n'+elements[l].replace("undefined","")+'Total price: '+ basket.innerHTML);
-    basket.innerHTML=0+"$";
-    price=0;
-    end_price=0;
-    elements[l]="";
+        alert('You have acquired:\n'+elements[l].replace("undefined","")+'Total price: '+ basket.innerHTML);
+        basket.innerHTML=0+"$";
+        price=0;
+        end_price=0;
+        elements[l]="";
     })
 var menuIcon = document.querySelector('.toggle');
 var menu=[];
@@ -166,7 +185,7 @@ var menu=[];
     menu[1]=document.getElementsByClassName('menu-list')[0];
     menu[2]=document.getElementsByClassName('basket')[0];
     if(menuIcon) {
-    menuIcon.addEventListener('click', toggleMenu);
+        menuIcon.addEventListener('click', toggleMenu);
     }
     function toggleMenu() {
         menu[0].classList.toggle('network-icons_active');
@@ -175,13 +194,13 @@ var menu=[];
     }
 var car_names=document.getElementsByClassName("car-header");
 var view_all =document.getElementsByClassName("all-cars")[0];
-view_all.addEventListener("click",function(){
-    for(var k=0;k<lot.length;k++){
-        lot[k].classList.remove('lot-disable');
-    }
-})
+    view_all.addEventListener("click",function(){
+        for(var k=0;k<lot.length;k++){
+            lot[k].classList.remove('lot-disable');
+        }
+    })
 var bmw_cars =document.getElementById("bmwonly");
-bmw_cars.addEventListener("click",function(){
+    bmw_cars.addEventListener("click",function(){
         for(var q=0;q<car_names.length;q++){
             lot[q].classList.remove("lot-disable");
             var test = car_names[q].innerHTML;
@@ -189,9 +208,9 @@ bmw_cars.addEventListener("click",function(){
                 lot[q].classList.add("lot-disable");
             } 
         }  
-})
+    })
 var mercedes_cars =document.getElementById("mercedesonly");
-mercedes_cars.addEventListener("click",function(){
+    mercedes_cars.addEventListener("click",function(){
         for(let q=0;q<car_names.length;q++){
             lot[q].classList.remove("lot-disable");
             var test = car_names[q].innerHTML;
@@ -199,17 +218,16 @@ mercedes_cars.addEventListener("click",function(){
                 lot[q].classList.add("lot-disable");        
             }
         }  
-})
+    })
 var add_lot_form=document.getElementById("add-lot-form");
 var add_lot_button=document.getElementById("add-lot-button");
 var close_add_lot_form=document.getElementsByClassName("close-add-lot-form");
     close_add_lot_form[0].addEventListener("click",function(){
         add_lot_form.style.display="none";
     })
-add_lot_button.addEventListener("click",function()
-{
-    add_lot_form.style.display="flex";
-})
+    add_lot_button.addEventListener("click",function(){
+        add_lot_form.style.display="flex";
+    })
 var lot=document.getElementsByClassName('lot');
 var lot_view=document.getElementsByClassName('lots-view-wrapper');
 var car_header=document.getElementsByClassName('car-header');
@@ -221,20 +239,69 @@ var view_model=document.getElementsByClassName("lot-model-view");
 var view_price=document.getElementsByClassName("lot-view-price");
 var car_characteristic=document.getElementsByClassName("lot-car_characteristics");
 var close_view_icon=document.getElementsByClassName("close-view-icon");
+var timer=document.getElementById("timer");
+var auction_time=0;
+var go=0;
+var auction_price=document.getElementsByClassName("lot-view-auction");
     for (var t = 0; t < lot.length; t++) {
-    lot[t].addEventListener('click', function show_view() {
-        lot_view[0].style.display="flex";
-        var target = event.target;
-        view_car_header[0].innerHTML=(target.parentNode.getElementsByClassName('car-header')[0].innerHTML);
-        view_image[0].src=target.parentNode.children[1].src;
-        form_lot_car_history[0].innerHTML=(target.parentNode.getElementsByClassName('car_history')[0].innerHTML);
-        view_model[0].innerHTML=(target.parentNode.getElementsByClassName('model')[0].innerHTML);
-        car_characteristic[0].innerHTML=(target.parentNode.getElementsByClassName('car_characteristics')[0].innerHTML);
-        view_price[0].classList.add("price");
-        view_price[0].innerHTML=(target.parentNode.getElementsByClassName('price')[0].innerHTML);
-        }
-    , false);}
+            lot[t].addEventListener('click', function show_view() {
+            lot_view[0].style.display="flex";
+            var target = event.target;
+            view_car_header[0].innerHTML=(target.parentNode.getElementsByClassName('car-header')[0].innerHTML);
+            view_image[0].src=target.parentNode.children[1].src;
+            form_lot_car_history[0].innerHTML=(target.parentNode.getElementsByClassName('car_history')[0].innerHTML);
+            view_model[0].innerHTML=(target.parentNode.getElementsByClassName('model')[0].innerHTML);
+            car_characteristic[0].innerHTML=(target.parentNode.getElementsByClassName('car_characteristics')[0].innerHTML);
+            view_price[0].classList.add("price");
+            view_price[0].innerHTML=(target.parentNode.getElementsByClassName('price')[0].innerHTML);
+            auction_price[0].value=(target.parentNode.getElementsByClassName('price')[0].innerHTML).replace(" ","");
+            var tmp=(auction_price[0].value).replace("$","");
+            var tmp2=parseInt(tmp/2);
+            auction_price[0].value=String(tmp2)+"$";
+            go=30;
+            function updateTime() {
+                go=go-1;
+                document.getElementById("timer").innerHTML =String(go) ;
+                if(document.getElementById("timer").innerHTML=="0"){
+                clearInterval(auction_time);
+            function func() {
+                alert("The car was sold for: "+document.getElementsByClassName("lot-view-auction")[0].value);
+                lot_view[0].style.display="none";
+                go=0;
+            }
+            setTimeout(func, 1000);
+            }
+            }
+            auction_time=setInterval(updateTime, 1000);
+            }, false);
+    }
+
+document.getElementById("raise-price").addEventListener("click",function(){
+    var view=document.getElementsByClassName("lot-view-auction")[0].value;
+    var current=view.replace("$","");
+    var price=parseInt(current);
+    price=price+1000;
+    document.getElementsByClassName("lot-view-auction")[0].value=String(price)+"$";
+})
+document.getElementById("reduce-price").addEventListener("click",function(){
+    var view=document.getElementsByClassName("lot-view-auction")[0].value;
+    var current=view.replace("$","");
+    var price=parseInt(current);
+    if(price<=current){
+        alert("The bid can not be less");
+    }
+    else {
+        price=price-1000;
+        document.getElementsByClassName("lot-view-auction")[0].value=String(price)+"$";
+    }
+})
 close_view_icon[0].addEventListener('click',function(){
+    clearInterval(auction_time);
+    document.getElementById("timer").innerHTML="30";
+    lot_view[0].style.display="none";
+})
+var view_button=document.getElementsByClassName("view-button");
+view_button[0].addEventListener("click",function(){
     lot_view[0].style.display="none";
 })
 var save_new_lot=document.getElementById("add-lot-accept");
@@ -315,4 +382,38 @@ save_new_lot.addEventListener("click",function(){
         alert("Fill out all of the fields");
         return false;
     }
+    document.getElementById('car_name').value="";
+    document.getElementById('photo').value="";
+    document.getElementById('model').value="";
+    document.getElementById('engine').value="";
+    document.getElementById('speed').value="";
+    document.getElementById('drive-unit').value="";
+    document.getElementById('price').value="";
 });
+var sort_button1 = document.getElementById('sort-ascending');
+var sort_button2 = document.getElementById('sort-decending');
+var add_lot_but=document.getElementById("add-lot-button");
+function sortingByPrice1(){
+    var items = document.querySelectorAll('.lot');
+    Array.from(items).sort(function(a, b) {
+        a = ~~(a.querySelector('.price').innerText).replace("$","").replace(" ","");
+        b = ~~(b.querySelector('.price').innerText).replace("$","").replace(" ","");
+      return a - b
+    }).forEach(function(n, i) {
+      n.style.order = i;
+      add_lot_but.style.order=i+1;
+    })
+  }
+  function sortingByPrice2(){
+    var items = document.querySelectorAll('.lot');
+    Array.from(items).sort(function(a, b) {
+      a = ~~(a.querySelector('.price').innerText).replace("$","").replace(" ","");
+      b = ~~(b.querySelector('.price').innerText).replace("$","").replace(" ","");
+      return b - a
+    }).forEach(function(n, i) {
+      n.style.order = i;
+      add_lot_but.style.order=i+1;
+    })
+  }
+  sort_button1.addEventListener('click', sortingByPrice1);
+  sort_button2.addEventListener('click', sortingByPrice2);

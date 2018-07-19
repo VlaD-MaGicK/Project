@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
     <title>World Auction</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
@@ -43,8 +43,8 @@
                     </ul>
                 </li>
                 <div class="search-button_container">
-                    <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search model:" autofocus/> 
-                    <input class="button_for_search" type="submit"  value="Search" title="Start search"/>
+                    <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search:" autofocus/> 
+                    <input class="button_for_search" type="submit"  value="Search"  title="Start search"/>
                     <input class="button_for_turn_back" type="button" value="Cancel" title="Cancel search"/>
                 </div>   
                 <li class="li-item8"><a class="a-menu-list" id="registration">Register</a></li>
@@ -75,8 +75,7 @@
                 <label for="letters" class="letter_accept">Yes, I would like to receive email newsletters</label>
             </div>
                 <button class="sign_in">Sign in</button>
-        </form>
-        
+        </form> 
         <form id="login">
             <img class="close-login_form" src="img/cancel.png" id="close_login" alt="close-icon"/>
             <img class="icon-user-login" src="img/add-user.png" alt="user-icon"/>
@@ -105,25 +104,43 @@
     </header>
         <h1 id="lots-navigation">Lots</h1>
         <section id="lots">
-            <p class="filter-menu"><a class="filter all-cars" href="###">VIEW ALL</a> 
+            <p class="filter-menu"><a class="filter all-cars" href="###">VIEW ALL CARS</a> 
                  <a href="###" id="bmwonly" class="filter">BMW Cars</a> 
                  <a href="###" id="mercedesonly" class="filter">Mercedes Cars</a>
             </p> 
+            <p class="sort-menu">
+                <span class="sort-menu-header">Car prices sort menu</span>
+                <a id="sort-decending" >Sorts in descending order</a>
+                <a id="sort-ascending">Sorts in ascending order</a>
+            </p>
             <div class="lots-view-wrapper"> 
-                <img class="close-view-icon" src="img/cancel.png" alt="close-icon"/>
                 <div class="lots-view">
+                    <img class="close-view-icon" src="img/cancel.png" alt="close-icon"/>
                     <h2 class="lot-header-view"></h2>
                     <img class="lot-view-image" src=' '   alt="lot-view-image"/>
                     <p class="lot-model-view model"></p>
                     <p class="lot-car_characteristics"></p>
                     <span class="lot-view-price"></span>
+                    <div class="auction-block">
+                        <div class="auction-timer">
+                            <p class="timer-header">Auction time:</p>
+                            <p id="timer">30</p>
+                        </div>
+                        <div class="view-auction-price">
+                            <div class="auction-buttons">
+                                <button id="raise-price">&#x25b2;</button>
+                                <button id="reduce-price">&#x25bc;</button>
+                            </div>
+                            <input class="lot-view-auction" readonly/>
+                        </div>            
+                    </div>
                     <p class="lot-car-history"></p>
                     <Button class="buy view-button">Buy now</Button>
                 </div>
             </div>
-            <div class="discount_cars bmwonly lot">
+            <div class="bmwonly lot">
                 <h2 class="car-header">BMW</h2>
-                <img src="img/lot1.jpg" id=less class="first-image view-img" alt="lot1-image"/>
+                <img src="img/lot1.jpg" class="view-img" alt="lot1-image"/>
                 <p class=model>Model: I8</p>
                 <p class="car_characteristics">
                     Egine: 1.5(251 h.p)<br/>
@@ -146,7 +163,7 @@
             </div>
             <div class="bmwonly lot">
                 <h2 class="car-header">BMW</h2>
-                <img src="img/lot2.jpg" class="second-image view-img" alt="lot2-image"/>
+                <img src="img/lot2.jpg" class="view-img" alt="lot2-image"/>
                 <p class=model>Model: M3</p>
                 <p class="car_characteristics">
                     Egine: 3.0(431 h.p)<br/>
@@ -168,7 +185,7 @@
             </div>
             <div class="bmwonly lot">
                 <h2 class="car-header">BMW</h2>
-                <img src="img/lot3.jpg" class="third-image view-img" alt="lot3-image"/>
+                <img src="img/lot3.jpg" class="view-img" alt="lot3-image"/>
                 <p class=model>Model: X5</p>
                 <p class="car_characteristics">
                     Egine: 3.0(231 h.p)<br/>
@@ -188,9 +205,9 @@
                 </p>
                 <Button class=buy>Buy now</Button>
             </div>
-            <div class="discount_cars mercedesonly lot">
+            <div class="mercedesonly lot">
                 <h2 class="car-header">Mercedes</h2>
-                <img src="img/lot4.jpg" class="fourth-image view-img" alt="lot4-image"/>
+                <img src="img/lot4.jpg" class="view-img" alt="lot4-image"/>
                 <p class=model>Model: Benz AMG GT</p>
                 <p class="car_characteristics">
                     Egine: 4.0(510 h.p)<br/>
@@ -211,9 +228,9 @@
                 </p>
                 <Button class=buy>Buy now</Button>
             </div>
-             <div class="discount_cars mercedesonly lot">
+             <div class="mercedesonly lot">
                 <h2 class="car-header">Mercedes</h2>
-                <img src="img/lot5.jpg" class="fifth-image view-img" alt="lot5-image"/>
+                <img src="img/lot5.jpg" class="view-img" alt="lot5-image"/>
                 <p class="model">Model: Benz GLE</p>
                 <p class="car_characteristics">
                     Egine: 4.7i(435 h.p)<br/>
@@ -232,9 +249,9 @@
                 </p> 
                 <Button class=buy>Buy now</Button>
              </div>
-             <div class="discounted-item mercedesonly lot">
+             <div class="mercedesonly lot">
                 <h2 class="car-header">Mercedes</h2>
-                <img src="img/lot6.jpg" class="sixth-image view-img" alt="lot6-image"/>
+                <img src="img/lot6.jpg" class="view-img" alt="lot6-image"/>
                 <p class=model>Model: Benz S-CLASS MAYBACH</p>
                 <p class="car_characteristics">
                     Egine: 6.0(630 h.p)<br/>
@@ -255,7 +272,7 @@
                 <Button class=buy>Buy now</Button>
              </div>
              <button id="add-lot-button"> + </button>
-             <form enctype="multipart/form-data" method="dialog" id="add-lot-form">
+             <form enctype="multipart/form-data" id="add-lot-form">
                 <img class="close-add-lot-form" src="img/cancel.png" alt="close-icon"/>
                 <label for="text" class="design">Car name</label>
                 <input type="text" id="car_name" placeholder="Input car name" title="Example: BMW | Mercedes..." required/>
@@ -350,28 +367,28 @@
                 </p>
             </div>
             <div class="news-mercedes">
-                <h2 class="mercedes-news-header">2019 Mercedes-Benz Concept EQ Exclusive Edition available in USA</h2> 
-                <div class="news-mercedes-images">
-                    <img class="news-mercedes-images-first"  src="img/mercedes-news-photo1.jpg" alt="mercedes-news-photo1"/>
-                    <img class="news-mercedes-images-second" src="img/mercedes-news-photo2.jpg" alt="mercedes-news-photo2"/>
-                    <img class="news-mercedes-images-third"  src="img/mercedes-news-photo2.jpg" alt="mercedes-news-photo3"/>
-                    <img class="news-mercedes-images-fourth" src="img/mercedes-news-photo2.jpg" alt="mercedes-news-photo4"/>
-                    <img class="news-mercedes-images-fifth"  src="img/mercedes-news-photo2.jpg" alt="mercedes-news-photo5"/>
+                    <h2 class="mercedes-news-header">2019 Mercedes-Benz Concept EQ Exclusive Edition available in USA</h2> 
+                    <div class="news-mercedes-images">
+                            <img class="news-bmw-images-first"  src="img/mercedes-news-photo1.jpg" alt="bmw-news-photo1"/>
+                            <img class="news-bmw-images-second" src="img/mercedes-news-photo2.jpg" alt="bmw-news-photo2"/>
+                            <img class="news-bmw-images-third"  src="img/mercedes-news-photo3.jpg" alt="bmw-news-photo3"/>
+                            <img class="news-bmw-images-fourth" src="img/mercedes-news-photo4.jpg" alt="bmw-news-photo4"/>
+                            <img class="news-bmw-images-fifth"  src="img/mercedes-news-photo5.jpg" alt="bmw-news-photo5"/>
+                        </div>
+                        <h3 class="mercedes-news-header2">Mercedes USA introduces a limited-edition model created specifically for the USA market with EQ. 
+                                The 2019 Mercedes-Benz Concept EQ Exclusive Edition is a bespoke version 
+                        </h3>
+                    <p class="mercedes-news-text">No matter how hard automakers and engineers may try, 
+                            it's impossible to turn an internal-combustion engine into a silent operator.
+                            However, as the auto industry shifts to battery packs and electric motors, silence ultimately wins out.
+                            Mercedes-Benz has created a cheeky reminder in the form of a video advertisement to show consumers the future bids goodbye to noise.
+                            The video features the Generation EQ concept from the 2016 Paris auto show driving around a test track. 
+                            The concept will spawn the production Mercedes-Benz EQC electric SUV.
+                            Strangely, we hear engine noises coming from the battery-electric vehicle. 
+                            That all comes to an end when the driver stops the futuristic crossover SUV and asks the passenger, the source of the noise, to exit. 
+                            The engine impersonator is none other than human beatboxer Daniel Jovanov, an Australian native known for his sound effects and car noises.
+                        </p>
                 </div>
-                <h3 class="mercedes-news-header2">Mercedes USA introduces a limited-edition model created specifically for the USA market with EQ. 
-                    The 2019 Mercedes-Benz Concept EQ Exclusive Edition is a bespoke version 
-                </h3>
-                <p class="bmw-news-text">No matter how hard automakers and engineers may try, 
-                    it's impossible to turn an internal-combustion engine into a silent operator.
-                    However, as the auto industry shifts to battery packs and electric motors, silence ultimately wins out.
-                    Mercedes-Benz has created a cheeky reminder in the form of a video advertisement to show consumers the future bids goodbye to noise.
-                    The video features the Generation EQ concept from the 2016 Paris auto show driving around a test track. 
-                    The concept will spawn the production Mercedes-Benz EQC electric SUV.
-                    Strangely, we hear engine noises coming from the battery-electric vehicle. 
-                    That all comes to an end when the driver stops the futuristic crossover SUV and asks the passenger, the source of the noise, to exit. 
-                    The engine impersonator is none other than human beatboxer Daniel Jovanov, an Australian native known for his sound effects and car noises.
-                </p>
-            </div> 
         </section>
         <section id="about">
             <h1 id="about-navigation">About</h1>

@@ -26,15 +26,6 @@ body,html{
     background-color: #222222;
     top:0px;
 }
-li[class*="li-item"]{
-    box-sizing: border-box;
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    height: auto;
-    padding: 0 2% 0 2%;
-    border-right:2px solid white;      
-}
 .network-icons{
     display: flex;
     flex-direction: row;
@@ -56,6 +47,33 @@ li[class*="li-item"]{
     width: 50px;
     height: 50px;
     margin: auto;
+}
+li[class*="li-item"]{
+    box-sizing: border-box;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    height: auto;
+    padding: 0 2% 0 2%;
+    border-right:2px solid white;      
+}
+.menu-list{
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    min-width: 300px; 
+}
+.a-menu-list{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: auto;
+    text-align: center;
+    text-decoration: none;
+    width:auto;
 }
 .li-item4 .a-menu-list,
 .li-item6 .a-menu-list,
@@ -86,7 +104,6 @@ li[class*="li-item"]{
     padding-left: 6%;
     width: 15%;
     min-width: 120px;
-    height: 69px !important;
 }
 .li-item8 .a-menu-list{
     position: relative;
@@ -104,7 +121,6 @@ li[class*="li-item"]{
     width: 15%;
     min-width: 120px;
     border-right: 2px solid white;
-    height: 69px !important;
 }
 .li-item9 .a-menu-list{
     position: relative;
@@ -115,23 +131,8 @@ li[class*="li-item"]{
     right: 100%;
     top:2%;
 }
-.menu-list{
-    display: flex;
-    width: 70%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 100%;
-    min-width: 300px; 
-}
-.a-menu-list{
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: auto;
-    text-align: center;
-    text-decoration: none;
-    width:auto;
+.li-menu{
+    position: relative;
 }
 .sub-menu{
     width: 100%;
@@ -155,9 +156,6 @@ li[class*="li-item"]{
 .sub-menu_links{
     color:white;
     text-decoration: none;
-}
-.li-menu{
-    position: relative;
 }
 .search-button_container{
     display: flex;
@@ -194,7 +192,6 @@ li[class*="li-item"]{
     margin-left: auto;
     color: white;
     width: 15%;
-    max-width: 15%;
     min-width: 240px;
     height: 50px;
     display: flex;
@@ -228,6 +225,45 @@ li[class*="li-item"]{
     margin-top:3%;
     text-align: center;
     font-size: 45px;
+}
+.slider{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    position:relative; 
+    margin-top:1%;
+}
+.slider_image{
+    width: 100%;
+    height: 65vh;
+}
+.slider-prev,.slider-next{
+    width: auto;
+    cursor: pointer;
+    height: auto;
+    position: absolute;
+    top: 40%;
+}
+.slider-prev{
+    left:-5%;
+}
+.slider-next{
+    right:-5%;
+}
+#myProgress{
+    position:relative;
+    width: 100%;
+    margin: auto;
+    height: 20px;
+    background: #ECEEE0;
+}
+#myBar{
+    position: absolute;
+    background-color: #CC9964;
+    bottom: 0;
+    position:relative;
+    width: 80%;
+    height: 100%;
 }
 #register,#login{
     width: 55%;
@@ -346,7 +382,6 @@ input[type="checkbox"]{
     flex-direction: row;
     word-wrap:break-word;
     justify-content: center;
-
 }
 .new-user-link,
 .new-user,
@@ -357,71 +392,39 @@ input[type="checkbox"]{
 .new-user-link{
     margin-left: 2%;
 }
-.slider{
-    width: 60%;
-    text-align: center;
-    margin: auto;
-    position:relative; 
-    margin-top:1%;
-}
-.slider_image{
-    width: 100%;
-    height: 60vh;
-}
-.slider-prev,.slider-next{
-    width: auto;
-    cursor: pointer;
-    height: auto;
-    position: absolute;
-    top: 40%;
-}
-.slider-prev{
-    left:-5%;
-}
-.slider-next{
-    right:-5%;
-}
-#myProgress{
-    position:relative;
-    width: 100%;
-    margin: auto;
-    height: 20px;
-    background: #ECEEE0;
-}
-#myBar{
-    position: absolute;
-    background-color: #CC9964;
-    bottom: 0;
-    position:relative;
-    width: 80%;
-    height: 100%;
-}
-#label{
-    text-align: center;
-    line-height: 30px;
-    color: white;
-}
-.filter-menu{
+.filter-menu,
+.sort-menu{
     display: flex;
     flex-direction: column; 
-    justify-content: space-around; 
     position: absolute; 
-    top:130%;
+    top:104%;
     left: 2%;
-    border:2px solid black;
-    width: 10%;
-    height: 25%;
+    border:3px solid black;
+    width: 9%;
+    height: 40%;
     background-color: white;
+    font-size:25px;
+    font-weight: bold;
 }
-.filter{
+.sort-menu{
+    top:150%;
+}
+.filter,
+#sort-decending,
+#sort-ascending{
     text-decoration: none;
     color: black;
-    font-weight: bold;
-    cursor: pointer;
 }
-.filter:hover{
-    font-size:20px;
-    background-color: red;
+#bmwonly,
+#sort-decending{
+    margin-bottom: auto;
+}
+.sort-menu-header,
+.all-cars{
+    text-align: center;
+    background:#0290FC;
+    margin-bottom:auto;
+    cursor: pointer;
 }
 #lots{
     display: flex;
@@ -440,16 +443,10 @@ input[type="checkbox"]{
     align-items:center;
     margin-top:2%;
     margin-right: auto;
-    height: 40%;
 }
-.lot .first-image,
-.second-image,
-.third-image,
-.fourth-image,
-.fifth-image,
-.sixth-image,
 .view-img{
-    width: 100%;
+    width: 260px;
+    height: 170px;
 }
 .buy{
     box-sizing: border-box;
@@ -481,10 +478,7 @@ input[type="checkbox"]{
     font-size: 23px;
 }
 .lot-disable{
-    opacity: 0;
-    transition: all 1s linear;
-    display: none;
-    
+    display: none;    
 }
 .lots-view-wrapper{
     width: 100%;
@@ -521,6 +515,41 @@ input[type="checkbox"]{
     margin-bottom:1%;
     cursor: pointer;
 }
+.auction-block{
+    border: 3px double black;
+    width: 25%;
+    margin:auto;
+}
+.lot-view-auction{
+    font-size:18px;
+    text-align: center;
+    border:1px solid black;
+    color:red;
+    width: 100%;
+}
+.view-auction-price{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+}
+.auction-buttons{
+    display: flex;
+    flex-direction: column; 
+    justify-content:center; 
+    align-items: center;
+}
+.auction-timer{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+}
+#timer,
+.timer-header{
+    font-size:25px;
+}
+#raise-price,#reduce-price{
+    border:1px solid black;
+}
 .car_history{
     display: none;
 }
@@ -533,25 +562,24 @@ input[type="checkbox"]{
     margin-top:1%;
 }
 .close-view-icon{
-    width: 2%;
+    width: 3%;
     height: 3%;
     position: absolute;
-    left: 81%;
-    top:5%;    
+    left: 94%;
+    top:2%;    
     z-index: 200;
     cursor: pointer;
 }
 #add-lot-button{
     margin-top:3.5%;
-    width: 32%;
+    width: 30%;
     border:3px dashed black;
-    height: 168px;
+    height: 150px;
     font-size: 64px;
     cursor: pointer;
-    
     margin-right: auto;
 }
-.price-block1,.price-block{
+.price-block{
     display: flex;
     flex-direction: row;
     justify-content:flex-start;
@@ -566,7 +594,7 @@ input[type="checkbox"]{
     position: fixed;
     width: 40%;
     height: 70%;
-    background-color:#6CE6C1;
+    background-color:#333333;
     top:15%;
     left: 30%;
     flex-direction: column;
@@ -594,9 +622,10 @@ input[type="checkbox"]{
     border-radius: 5px;
     border:1px solid black;
     height: 4%;
+    padding-left:2%;
 }
 #photo{
-    width: 34%;
+    width: 40%;
 }
 #history{
     height: 20%;
@@ -604,16 +633,18 @@ input[type="checkbox"]{
 .design{
     font-size:18px;
     font-weight: bold;
-    color:#FE0000;
+    color:#FABC06;
 }
 .save{
-    background-color:black;
-    color:yellow;
+    background-color:#FABC06;
+    color:white;
     font-weight: bold;
     width: 25%;
     height: 6%;
     cursor: pointer;
     font-size:17px;
+    border:0;
+    border-radius:5px;
 }
 #discounts{
     display: flex;
@@ -629,10 +660,11 @@ input[type="checkbox"]{
 .discount-lot3-photo{
     width:50%;
 }
-.discount-lot1-photo img,
-.discount-lot2-photo img,
-.discount-lot3-photo img{
+.discount-lot1-img,
+.discount-lot2-img,
+.discount-lot3-img{
     width: 100%;
+    height: auto;
 }
 .discount-lot1,
 .discount-lot2,
@@ -658,7 +690,7 @@ input[type="checkbox"]{
     flex-direction: row;
     flex-wrap: wrap;
     margin-top:1%;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-bottom: 2%;
 }
 .news-bmw,
@@ -666,7 +698,10 @@ input[type="checkbox"]{
     display: flex;
     flex-direction: column;
     width: 46%;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top:0;
 }
 .bmw-news-header,
 .bmw-news-header2,
@@ -677,10 +712,7 @@ input[type="checkbox"]{
     font-weight: bold;
 }
 .news-bmw-images-first,
-.news-mercedes-images-first{
-    width: 98.8%;
-    height: 53vh;
-}
+.news-mercedes-images-first,
 .news-bmw-images-second,
 .news-bmw-images-third,
 .news-bmw-images-fourth,
@@ -689,10 +721,11 @@ input[type="checkbox"]{
 .news-mercedes-images-third,
 .news-mercedes-images-fourth,
 .news-mercedes-images-fifth{
-    width: 24.3%;
-    height: 15vh;
+    width: 100%;
+    height: auto;
 }
-.bmw-news-text{
+.bmw-news-text,
+.mercedes-news-text{
     margin-top:2%;
     text-align: justify;
     font-size:20px;
@@ -855,15 +888,15 @@ input[placeholder="Search your lot:"]{
 .terms_accept:hover,
 .letter_accept:hover,
 .register-text:hover{
-      filter:  grayscale(100%) 
-      brightness(40%) sepia(100%) hue-rotate(-50deg) 
-      saturate(600%) contrast(0.8);
+    filter:  grayscale(100%) 
+    brightness(40%) sepia(100%) hue-rotate(-50deg) 
+    saturate(600%) contrast(0.8);
 }
 .new-user-text:hover,
 .new-user-link:hover,
 .forgot-password:hover{
-      color: #FABC06;
-      cursor: pointer;
+    color: #FABC06;
+    cursor: pointer;
 }
 .password-field-login:hover,
 .email-field-login:hover,
@@ -872,12 +905,12 @@ input[placeholder="Search your lot:"]{
 .phone_number-field:hover,
 .password-field:hover,
 .confirm_password-field:hover{
-      background-color:white;
+    background-color:white;
 }
 .login_in:hover,
 .sign_in:hover{
-      background-color:#FFD800;
-  }
+    background-color:#FFD800;
+}
 .button_for_search:hover,
 .button_for_turn_back:hover,
 #show-form_register:hover,
@@ -888,17 +921,24 @@ input[placeholder="Search your lot:"]{
 .close-login_form:hover,
 .close-view-icon:hover,
 .close-add-lot-form:hover{
-      filter:  grayscale(100%) 
-      brightness(200%) sepia(100%) hue-rotate(-50deg) 
-      saturate(600%) contrast(1);
+    filter:  grayscale(100%) 
+    brightness(200%) sepia(100%) hue-rotate(-50deg) 
+    saturate(600%) contrast(1);
 }
 .lot:hover{
     border:2px solid black;
-    transform: scale(1.2) ;
+    transform: scale(1.2);
     box-shadow: 0 10px 100px 1px #FED700;
-    transition: all 2s linear;
-    z-index: 100;
+    transition: all 0.1s linear;
+    z-index: 99;
     background-color:#EEF0E2;
+    cursor: pointer;
+}
+#bmwonly:hover,
+#mercedesonly:hover,
+#sort-decending:hover,
+#sort-ascending:hover{
+    background-color: red;
     cursor: pointer;
 }
 .discount-lot1:hover,
@@ -908,7 +948,7 @@ input[placeholder="Search your lot:"]{
     border:2px solid black;
     transform: scaleX(1.1) scaleY(1.1);
     box-shadow: 0 10px 100px 1px #FED700;
-    transition: all 2s;
+    transition: all 0.1s linear;
     z-index: 100;
 }
 .discount-lot1:hover .discount-lot1-img,
@@ -917,7 +957,7 @@ input[placeholder="Search your lot:"]{
     padding-left:0.5%;
     padding-top:1%;
     transform: scaleX(1) scaleY(1.02);
-    transition: all 0.5s;
+    transition: all 0.1s;
 }
 .advantages:hover{
     background-color:#EDE738;
@@ -934,100 +974,6 @@ input[placeholder="Search your lot:"]{
 }
 @media only screen and (min-width: 320px) and (max-width: 767px)
 {
-    .filter-menu{
-      display: none;
-    }
-    .sub-menu{
-        display: none;
-    }
-    #myBar{
-        height: 60%;
-    }
-    .li-item9 .a-menu-list::before{
-        top:-50%;
-    }
-    .lot:hover,
-    .discount-lot1:hover,
-    .discount-lot2:hover,
-    .discount-lot3:hover{
-       transform: none;
-       transition: 0.1s;
-    }
-    ::-webkit-input-placeholder {
-         color:black;
-         font-size:14px;
-    }
-    #register,#login,#add-lot-form{
-        width: 70%;
-        left: 15%;
-        height: auto;
-        top: 15%;
-    }
-    #login{
-        width: 65%;
-    }
-    .icon-user-login{
-        width: 20%;
-    }
-    .register-text,
-    .new-user-text,
-    .new-user-link,
-    .forgot-password{
-        font-size: 15px;
-    }
-    .name-field,
-    .email-field,
-    .phone_number-field,
-    .password-field,
-    .confirm_password-field{
-        width: 86%;
-        height: 10%;
-    }
-    .email-field-login,
-    .password-field-login{
-        height: 10%;
-    }
-    #close_register,
-    #close_login{
-        left: 85%;
-    }
-    .icon-user{
-        width: 20%;
-        height: 27%;
-    }
-    .terms_accept,
-    .letter_accept{
-        font-size:15px;
-        margin-left: 5%;
-        width: 85%;
-    }
-    .choice1,
-    .choice2{
-        height: 23%;
-        text-align: left;
-        margin-left:auto;
-        margin-right: auto;
-    }
-    .choice2{
-        margin-top:2%;
-        height: 16%;
-    }
-    .sign_in,.login_in{
-        width: 130px;
-        height: 30px;
-        font-size: 20px;
-        margin-bottom: 3%;
-    }
-    #speed,
-    #drive-unit{
-        margin-top:2%;
-    }
-    #history{
-        padding-bottom: 15%;
-    }
-    .save{
-        margin: 2% 0 2% 0;
-    }
     .network-icons,
     .menu-list,
     .basket{
@@ -1051,6 +997,9 @@ input[placeholder="Search your lot:"]{
         flex-direction: row;
         width: 100%;
     }
+    .li-item9 .a-menu-list::before{
+        top:-50%;
+    }
     .li-item8{
         margin-left: auto;
         height: 50px !important;
@@ -1058,6 +1007,9 @@ input[placeholder="Search your lot:"]{
     .li-item9{
         margin-right: auto;
         height: 50px !important;   
+    }
+    .sub-menu{
+        display: none;
     }
     .search-button_container{
         width: 100%;
@@ -1098,19 +1050,109 @@ input[placeholder="Search your lot:"]{
         width: 25px;
     }
     .slider-next{
-        right:-8%;
+        right:-7%;
         top:35%;
         width: 25px;
     }
-    #add-lot-button{
-        width:100%;
-        margin-left:0;
+    #myBar{
+        height: 60%;
+    }
+    ::-webkit-input-placeholder {
+        color:black;
+        font-size:14px;
+   }
+   #register,#login,#add-lot-form{
+       width: 70%;
+       left: 15%;
+       height: auto;
+       top: 15%;
+   }
+   #login{
+       width: 65%;
+   }
+   .icon-user-login{
+       width: 20%;
+   }
+   .register-text,
+   .new-user-text,
+   .new-user-link,
+   .forgot-password{
+       font-size: 15px;
+   }
+   .name-field,
+   .email-field,
+   .phone_number-field,
+   .password-field,
+   .confirm_password-field{
+       width: 86%;
+       height: 10%;
+   }
+   .email-field-login,
+   .password-field-login{
+       height: 10%;
+   }
+   #close_register,
+   #close_login{
+       left: 85%;
+   }
+   .icon-user{
+       width: 20%;
+       height: 27%;
+   }
+   .terms_accept,
+   .letter_accept{
+       font-size:15px;
+       margin-left: 5%;
+       width: 85%;
+   }
+   .choice1,
+   .choice2{
+       height: 23%;
+       text-align: left;
+       margin-left:auto;
+       margin-right: auto;
+   }
+   .choice2{
+       margin-top:2%;
+       height: 16%;
+   }
+   .sign_in,.login_in{
+       width: 130px;
+       height: 30px;
+       font-size: 20px;
+       margin-bottom: 3%;
+   }
+   #speed,
+   #drive-unit{
+       margin-top:2%;
+   }
+   #history{
+       padding-bottom: 15%;
+   }
+   .save{
+       margin: 2% 0 2% 0;
+   }
+    #bmwonly,
+    #sort-decending{
+        margin-bottom:auto;
+    }
+    .filter-menu,.sort-menu{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 32%;
+        height: 52vh;
     }
     #lots{
         width: 95%;
     }
-    .lot{
+    .lots-view{
+       top:80%;
+        overflow: scroll;
+    }
+    .lot,.view-img{
         width: 100%;
+        height: auto;
     }
     .lots-view-wrapper{
         top:6%;
@@ -1127,17 +1169,24 @@ input[placeholder="Search your lot:"]{
         width: 90%;
         border-radius: 10px;
     }
+    .auction-block{
+        width: 80%;
+    }
     .lot-car-history{
         text-align: center;
         border-top:2px solid black;
         border-bottom:2px solid black;
         font-size:22px;
     }
+    #add-lot-button{
+        width:100%;
+        margin-left:0;
+    }
     .close-view-icon{
        width: 20px;
        height: 20px;
-       left: 75%;
-       top:2.5%;
+       left: 89%;
+       top:1%;
     }
     #discounts{
         width:95%;
@@ -1182,7 +1231,7 @@ input[placeholder="Search your lot:"]{
     .news-mercedes-images-third,
     .news-mercedes-images-fourth,
     .news-mercedes-images-fifth{
-        width: 48.8%;
+        width: 49.4%;
         height: auto;
     }
     #about{
@@ -1196,26 +1245,6 @@ input[placeholder="Search your lot:"]{
         padding-top: 2%;
         padding: 0 5% 0 5%;
         margin-bottom: 0;
-    }
-    #footer{
-        padding: 5% 0 10% 0;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: justify;
-    }
-    .footer-info1,
-    .footer-info2,
-    .footer-info3{
-         width: 100%;
-         margin-top: 4%;
-    }
-    .map{
-        width: 95%;
-        height: 300px;
-    }
-    .term-rules,.privacy-rules{
-        font-size:20px;
     }
     .advantages{
         flex-direction: column;
@@ -1243,128 +1272,39 @@ input[placeholder="Search your lot:"]{
     .text3_advantages{
         font-size: 20px;
     }
+    #footer{
+        padding: 5% 0 10% 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+    .footer-info1,
+    .footer-info2,
+    .footer-info3{
+         width: 100%;
+         margin-top: 4%;
+    }
+    .map{
+        width: 95%;
+        height: 300px;
+    }
+    .term-rules,.privacy-rules{
+        font-size:20px;
+    }
+    .lot:hover,
+    .discount-lot1:hover,
+    .discount-lot2:hover,
+    .discount-lot3:hover{
+       transform: none;
+       transition: 0.1s;
+    }
 }
 @media only screen and (min-width: 768px) and (max-width: 1364px)
 {
     .li-item9 .a-menu-list::before{
         top:-40%;
     }
-    #add-lot-form{
-        width: 60%;
-        margin:0;
-        left: 20%;
-        height: 89%;
-        top: 5%;
-    }
-    #speed,
-    #drive-unit{
-        margin-top:2%;
-    }
-    #history{
-        padding-bottom: 15%;
-    }
-    .design{
-        font-size: 22px;
-        font-weight: bold;
-    }
-    #history,
-    #car_name,
-    #model,
-    #engine,
-    #speed,
-    #drive-unit,
-    #price{
-        padding-bottom: 10px;
-    }
-    .save{
-        margin: 2% 0 2% 0;
-        font-size:20px;
-    }
-    .new-user,
-    .forgot-password{
-        height: auto;
-    }
-    .close-view-icon{
-        width: 30px;
-        height: 30px;
-        left: 78%;
-        top:5%;
-     }
-     .close-register_form{
-         left: 90%;
-     }
-     .close-login_form{
-         left: 85%;
-     }
-     #register{
-         max-width:85%;
-         margin:0;
-         left: 25%;
-         top: 18%;
-         justify-content: space-around;
-         height: auto;
-     }
-     .icon-user{
-         width:22%;
-         height: 32%;
-     }
-     .icon-user-login{
-         width: 25%;
-         height: 23%;
-     }
-     .name-field,
-     .email-field,
-     .phone_number-field,
-     .password-field,
-     .confirm_password-field,
-     .email-field-login,
-     .password-field-login
-     {
-         width: 86%;
-         height: 8%;
-     }
-     .register-text,
-     .new-user-text,
-     .new-user-link,
-     .forgot-password{
-         font-size: 20px;
-     }
-     ::-webkit-input-placeholder{
-         color:black;
-         font-size:18px;
-     }
-     #login{
-         justify-content: space-around;
-     }
-     .terms_accept,
-     .letter_accept{
-         font-size:20px;
-         margin-left: 5%;
-         width: 85%;
-     }
-     .choice1,
-     .choice2{
-         height: 35%;
-         text-align: left;
-         margin-left:auto;
-         margin-right: auto;
-     }
-     .choice2{
-         margin-top:5%;
-         height: 24%;
-         margin-bottom:auto;
-     }
-     .sign_in{
-         width: 170px;
-         height: 60px;
-         font-size: 25px;
-         margin-top: 3%;
-         margin-bottom: 3%;
-     }
-     .login_in{
-         width:150px;
-         height: 50px;
-     }
     .network-icons{
         width: 4%;
         border-right: 2px solid white;
@@ -1417,11 +1357,144 @@ input[placeholder="Search your lot:"]{
         width: 45%;
         margin-left: 1%;
     }
+    #bmwonly,
+    #sort-decending{
+        margin-bottom:auto;
+    }
+    .filter-menu,.sort-menu{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        height: 35vh;
+        font-size:25px;
+    }
     #lots{
         width: 95%;
     }
     .lot{
         width: 48%;
+    }
+    .lot .view-img{
+        width: 100%;
+        height: auto;
+    }
+    #add-lot-form{
+        width: 60%;
+        margin:0;
+        left: 20%;
+        height: 89%;
+        top: 5%;
+    }
+    #speed,
+    #drive-unit{
+        margin-top:2%;
+    }
+    #history{
+        padding-bottom: 15%;
+    }
+    .design{
+        font-size: 22px;
+        font-weight: bold;
+    }
+    #history,
+    #car_name,
+    #model,
+    #engine,
+    #speed,
+    #drive-unit,
+    #price{
+        padding-bottom: 10px;
+    }
+    .save{
+        margin: 2% 0 2% 0;
+        font-size:20px;
+    }
+    .new-user,
+    .forgot-password{
+        height: auto;
+    }
+    .close-view-icon{
+        width: 30px;
+        height: 30px;
+    }
+    .close-register_form{
+         left: 90%;
+    }
+    .close-login_form{
+         left: 85%;
+    }
+    #register{
+         max-width:85%;
+         margin:0;
+         left: 25%;
+         top: 18%;
+         justify-content: space-around;
+         height: auto;
+    }
+    .icon-user{
+         width:22%;
+         height: 32%;
+    }
+    .icon-user-login{
+         width: 25%;
+         height: 23%;
+    }
+    .name-field,
+    .email-field,
+    .phone_number-field,
+    .password-field,
+    .confirm_password-field,
+    .email-field-login,
+    .password-field-login
+    {
+         width: 86%;
+         height: 8%;
+    }
+    .register-text,
+    .new-user-text,
+    .new-user-link,
+    .forgot-password{
+         font-size: 20px;
+    }
+    ::-webkit-input-placeholder{
+         color:black;
+         font-size:18px;
+    }
+    #login{
+         justify-content: space-around;
+    }
+    .terms_accept,
+    .letter_accept{
+         font-size:20px;
+         margin-left: 5%;
+         width: 85%;
+    }
+    .choice1,
+    .choice2{
+         height: 35%;
+         text-align: left;
+         margin-left:auto;
+         margin-right: auto;
+    }
+    .choice2{
+         margin-top:5%;
+         height: 24%;
+         margin-bottom:auto;
+    }
+    .sign_in{
+         width: 170px;
+         height: 60px;
+         font-size: 25px;
+         margin-top: 3%;
+         margin-bottom: 3%;
+    }
+    .login_in{
+         width:150px;
+         height: 50px;
+    }
+    .auction-block{
+        width: 35%;
     }
     #discounts{
         width:95%;
@@ -1441,13 +1514,13 @@ input[placeholder="Search your lot:"]{
     }
     #news{
         width: 100%;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         justify-content: center;
     }
     .news-bmw,.news-mercedes{
-        width: 95%;
+        width: 46%;
         margin-top: 2%;
     }   
     .news-bmw-images-second,
@@ -1458,7 +1531,7 @@ input[placeholder="Search your lot:"]{
     .news-mercedes-images-third,
     .news-mercedes-images-fourth,
     .news-mercedes-images-fifth{
-        width: 49.1%;
+        width: 49.5%;
         height: auto;
     }
     .news-mercedes-images-first{
@@ -1475,6 +1548,9 @@ input[placeholder="Search your lot:"]{
    }
 }
 @media only screen and (min-width: 1367px){
+    .slider_image{
+        height: 52vh;
+    }
     .name-field,
     .email-field,
     .phone_number-field,
@@ -1548,48 +1624,163 @@ input[placeholder="Search your lot:"]{
         padding-top: 2%;
    }
 }
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .lot .view-img{ 
-        height:40%; 
+@media only screen and (min-width: 1419px){
+    .li-item9 .a-menu-list::before {
+        top:-50%;
     }
-    .discount-lot1,.discount-lot2,.discount-lot3{
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width:320px) and (max-width:768px){
+    .lots-view{
+        height: 145%; 
+    }
+    .lot-view-image{
+        height: 20%;
+    }
+    .lot-model-view model{
+        height: 15%;
+    }
+    .lot-car-history{
+        margin-top:auto;
+        height: 47%;
+        font-size:17px;
+    }
+    .close-view-icon{
+        left: 87%;
+        top:1%;
+    }
+    .view-img{
+        width: 80%;
         height: 50%;
+    }
+    .register-header{
+        width: 70%;
+    }
+    .discount-lot1-photo,
+    .discount-lot2-photo,
+    .discount-lot3-photo{
+       height: 70%;
+    }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width:769px) and (max-width:1020px){
+    .lot-view{
+        height: 140%;
+    }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .lot-view{
+        height: 110%;
     }
    .li-item4 .a-menu-list,
    .li-item5 .a-menu-list,
    .li-item6 .a-menu-list,
-   .li-item7 .a-menu-list{
-        position: absolute;
-        top:30%;
-        left: 0;
+   .li-item7 .a-menu-list,
+   .li-item8 .a-menu-list,
+   .li-item9 .a-menu-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        width: 100%;
+        margin-top:0;
     }
-    .register-text{
-        height: 12vh;
+    .li-item8 .a-menu-list::before,
+    .li-item9 .a-menu-list::before{
+        top:10%;  
+    }
+    .basket_active{
+        width: 30%;
     }
     .icon-user,
     .icon-user-login{
         height: auto;
     }
-    .sign_in{
-        height: 115px;
-    }
-    .li-item9 .a-menu-list{
-        margin-top: 15%;
-    }
-    .li-item9 .a-menu-list::before{
-        top:0;
-    }
-    .li-item8 .a-menu-list{
-        margin-top: 30%;
-    }
-    .li-item8 .a-menu-list::before{
-        top:-25%;
-    }
-    .basket{
-        min-width: 0;
-    }
     .basket img{
         width: 35px;
         height: 35px;
+    }
+    .lot-view{
+        height: 140%;
+    }
+    .discount-lot1,.discount-lot2,.discount-lot3{
+        height: 50%;
+    }
+    #news{
+        display: flex;
+        width: 100%;
+        margin: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top:1%;
+        justify-content: space-between;
+        padding-bottom: 2%;
+    }
+    .news-bmw,
+    .news-mercedes{
+        display: flex;
+        flex-direction: column;
+        width: 46%;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top:0;
+        height: 80%;
+    }
+    .bmw-news-header,
+    .bmw-news-header2,
+    .mercedes-news-header,
+    .mercedes-news-header2{
+        text-align: center;
+        margin-top:1%;
+        font-weight: bold;
+    }
+    .news-bmw-images-first,
+    .news-bmw-images-second,
+    .news-bmw-images-third,
+    .news-bmw-images-fourth,
+    .news-bmw-images-fifth{
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin:auto;
+    }
+    .bmw-news-header,
+    .mercedes-news-header{
+        text-align: center;
+        font-size:20px;
+        width: 100%;
+    }
+    .bmw-news-header2,
+    .mercedes-news-header2{
+        margin-top:2%;
+        width: 100%;
+    }
+    .bmw-news-text,
+    .mercedes-news-text{
+        width: 100%;
+    }
+    .mercedes-news-text{
+        margin-top:2%;
+        font-size:20px;
+    }
+    .news-bmw-images,
+    .news-mercedes-images{
+        width: 100%;
+        height: 84%;
+    }
+    input[placeholder="Search model:"]{
+        color:black;
+        font-weight: bold;
+        text-align: center;
+        font-size: 15px;
+    }
+    .register-text{
+        height: 20%;
+    }
+    .sign_in{
+        height: 20%;
     }
 }
